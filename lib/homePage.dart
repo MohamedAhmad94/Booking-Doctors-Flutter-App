@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -35,6 +34,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             Container(
               height: 200,
+              margin: EdgeInsets.all(10),
               padding: EdgeInsets.all(10.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
@@ -88,6 +88,7 @@ class _HomePageState extends State<HomePage> {
                 image: DecorationImage(
                   image: AssetImage('assets/images/doctor1.png'),
                   alignment: Alignment.centerRight,
+                  fit: BoxFit.fitHeight,
                 ),
               ),
               alignment: Alignment.centerLeft,
