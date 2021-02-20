@@ -20,16 +20,17 @@ class _BrowseState extends State<Browse> {
               decoration: BoxDecoration(
                 color: Colors.white,
               ),
-              alignment: Alignment.centerRight,
               child: ListTile(
                 leading: Icon(Icons.arrow_back_sharp,
                     color: Colors.black87, size: 25.0),
-                title: Text(
-                  "Browse",
-                  style: TextStyle(
-                      color: Colors.black87,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
+                title: Center(
+                  child: Text(
+                    "Browse",
+                    style: TextStyle(
+                        color: Colors.black87,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
               ),
             ),
@@ -42,37 +43,12 @@ class _BrowseState extends State<Browse> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  Container(
-                    margin: EdgeInsets.all(10),
-                    height: 90,
-                    width: MediaQuery.of(context).size.width / 2.50,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        border: Border.all(width: 1.0, color: Colors.blue)),
-                    alignment: Alignment.center,
-                    child: ListTile(
-                      leading: Icon(Icons.filter_alt_outlined,
-                          color: Colors.blue, size: 20.0),
-                      title: Text(
-                        "Filter",
-                        style: TextStyle(
-                            color: Colors.blue,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
-                  searchFilters(
-                      label: "Gender", iconData2: Icons.arrow_drop_down),
-                  searchFilters(
-                      label: "Distance", iconData2: Icons.arrow_drop_down),
-                  searchFilters(
-                      label: "Specialization",
-                      iconData2: Icons.arrow_drop_down),
-                  searchFilters(
-                      label: "Rating", iconData2: Icons.arrow_drop_down),
-                  searchFilters(
-                      label: "Fees", iconData2: Icons.arrow_drop_down),
+                  searchFilters("Filter", Icons.filter_alt_outlined),
+                  searchFilters("Gender", Icons.arrow_drop_down),
+                  searchFilters("Distance", Icons.arrow_drop_down),
+                  searchFilters("Specialization", Icons.arrow_drop_down),
+                  searchFilters("Rating", Icons.arrow_drop_down),
+                  searchFilters("Fees", Icons.arrow_drop_down),
                 ],
               ),
             ),
@@ -117,7 +93,7 @@ class _BrowseState extends State<Browse> {
     );
   }
 
-  searchFilters({String label, IconData iconData, IconData iconData2}) {
+  searchFilters(String label, IconData iconData) {
     return Container(
       margin: EdgeInsets.all(10),
       height: 90,
@@ -132,7 +108,7 @@ class _BrowseState extends State<Browse> {
           style: TextStyle(
               color: Colors.blue, fontSize: 20, fontWeight: FontWeight.bold),
         ),
-        trailing: Icon(iconData2, color: Colors.blue, size: 25.0),
+        trailing: Icon(iconData, color: Colors.blue, size: 25.0),
       ),
     );
   }
@@ -146,7 +122,6 @@ class _BrowseState extends State<Browse> {
       String fees,
       String image}) {
     return Container(
-      // padding: EdgeInsets.all(10),
       height: 250,
       margin: EdgeInsets.all(10),
       decoration: BoxDecoration(
@@ -181,22 +156,12 @@ class _BrowseState extends State<Browse> {
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       height: 1.5)),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Icon(Icons.star, color: Colors.amber, size: 15.0),
-                  Icon(Icons.star, color: Colors.amber, size: 15.0),
-                  Icon(Icons.star, color: Colors.amber, size: 15.0),
-                  Icon(Icons.star, color: Colors.amber, size: 15.0),
-                  Icon(Icons.star, color: Colors.amber, size: 15.0),
-                  Text(rating,
-                      style: TextStyle(
-                          color: Colors.black54,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          height: 1.5)),
-                ],
-              ),
+              Text(rating,
+                  style: TextStyle(
+                      color: Colors.black54,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      height: 1.5)),
               Text(location,
                   style: TextStyle(
                       color: Colors.black54,
@@ -215,39 +180,29 @@ class _BrowseState extends State<Browse> {
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       height: 1.5)),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Icon(Icons.favorite_border, color: Colors.blue, size: 20),
-                  Text(
-                    "Add to Favorites",
-                    style: TextStyle(
-                        color: Colors.blue,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                        height: 1.5),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Icon(Icons.calendar_today_outlined,
-                      color: Colors.blue, size: 20),
-                  Text(
-                    "Book Appointment",
-                    style: TextStyle(
-                        color: Colors.blue,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                        height: 1.5),
-                  ),
-                ],
-              ),
+              doctorOptions("Add to Favorites", Icons.favorite_border),
+              doctorOptions("Book Appointment", Icons.calendar_today_outlined),
             ],
           )
         ],
       ),
+    );
+  }
+
+  doctorOptions(String option, IconData iconData) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        Icon(iconData, color: Colors.blue, size: 20),
+        Text(
+          option,
+          style: TextStyle(
+              color: Colors.blue,
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
+              height: 1.5),
+        ),
+      ],
     );
   }
 }
