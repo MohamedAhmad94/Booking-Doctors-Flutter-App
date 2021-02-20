@@ -1,5 +1,4 @@
-import 'package:DoctorsBooking/homePage.dart';
-import 'package:DoctorsBooking/account.dart';
+import 'package:DoctorsBooking/screens/bottomnavbar/bottomnavbar.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -9,7 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: BottomNavBar(),
     );
   }
 }
