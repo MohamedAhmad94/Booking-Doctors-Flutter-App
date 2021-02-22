@@ -1,4 +1,5 @@
 import 'package:DoctorsBooking/widgets/customappbar.dart';
+import 'package:DoctorsBooking/widgets/doctordata.dart';
 import 'package:flutter/material.dart';
 
 class Appointments extends StatefulWidget {
@@ -22,7 +23,11 @@ class _AppointmentsState extends State<Appointments>
       backgroundColor: Colors.grey[50],
       appBar: AppBar(
         backgroundColor: Color(0xff00BBDC),
-        // leading: Icon(Icons.sort, color: Colors.white, size: 25.0),
+        leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios),
+            onPressed: () {
+              Navigator.pop(context);
+            }),
         elevation: 0.0,
         bottom: PreferredSize(
           preferredSize: Size(0.0, 100.0),
@@ -108,65 +113,13 @@ class _HistoryState extends State<History> {
         scrollDirection: Axis.vertical,
         itemCount: previousAppointments.length,
         itemBuilder: (context, index) {
-          return Container(
-            margin: EdgeInsets.all(10.0),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(15.0),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  height: 120.0,
-                  width: MediaQuery.of(context).size.width / 3.3,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                      image: NetworkImage(previousAppointments[index][4]),
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      previousAppointments[index][0],
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold,
-                          height: 1.5),
-                    ),
-                    Text(
-                      previousAppointments[index][1],
-                      style: TextStyle(
-                          color: Color(0xff00BBDC),
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold,
-                          height: 1.5),
-                    ),
-                    Text(
-                      previousAppointments[index][2],
-                      style: TextStyle(
-                          color: Colors.black87,
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold,
-                          height: 1.5),
-                    ),
-                    Text(
-                      previousAppointments[index][3],
-                      style: TextStyle(
-                          color: Colors.black87,
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold,
-                          height: 1.5),
-                    ),
-                  ],
-                )
-              ],
-            ),
+          return Doctors(
+            doctorName: previousAppointments[index][0],
+            type: previousAppointments[index][1],
+            date: previousAppointments[index][2],
+            time: previousAppointments[index][3],
+            image: previousAppointments[index][4],
+            className: "History",
           );
         },
       ),
@@ -218,65 +171,13 @@ class _UpcomingState extends State<Upcoming> {
         scrollDirection: Axis.vertical,
         itemCount: upcomingAppointments.length,
         itemBuilder: (context, index) {
-          return Container(
-            margin: EdgeInsets.all(10.0),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(15.0),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  height: 120.0,
-                  width: MediaQuery.of(context).size.width / 3.3,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                      image: NetworkImage(upcomingAppointments[index][4]),
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      upcomingAppointments[index][0],
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold,
-                          height: 1.5),
-                    ),
-                    Text(
-                      upcomingAppointments[index][1],
-                      style: TextStyle(
-                          color: Color(0xff00BBDC),
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold,
-                          height: 1.5),
-                    ),
-                    Text(
-                      upcomingAppointments[index][2],
-                      style: TextStyle(
-                          color: Colors.blue,
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold,
-                          height: 1.5),
-                    ),
-                    Text(
-                      upcomingAppointments[index][3],
-                      style: TextStyle(
-                          color: Colors.blue,
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold,
-                          height: 1.5),
-                    ),
-                  ],
-                )
-              ],
-            ),
+          return Doctors(
+            doctorName: upcomingAppointments[index][0],
+            type: upcomingAppointments[index][1],
+            date: upcomingAppointments[index][2],
+            time: upcomingAppointments[index][3],
+            image: upcomingAppointments[index][4],
+            className: "Upcoming",
           );
         },
       ),

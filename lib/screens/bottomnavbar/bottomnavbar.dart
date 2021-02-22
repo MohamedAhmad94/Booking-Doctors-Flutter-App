@@ -1,7 +1,6 @@
 import 'package:DoctorsBooking/screens/bottomnavbar/appointments.dart';
 import 'package:DoctorsBooking/screens/bottomnavbar/homePage.dart';
 import 'package:DoctorsBooking/screens/bottomnavbar/profile.dart';
-import 'package:DoctorsBooking/screens/bottomnavbar/browse.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -11,7 +10,7 @@ class BottomNavBar extends StatefulWidget {
 
 class _BottomNavBarState extends State<BottomNavBar> {
   int current = 0;
-  List screens = [HomePage(), Browse(), Appointments(), Profile()];
+  List screens = [HomePage(), Appointments(), Profile()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,10 +19,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Browse',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.calendar_today),

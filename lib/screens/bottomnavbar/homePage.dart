@@ -1,4 +1,7 @@
+import 'package:DoctorsBooking/screens/categoriesandoffers.dart';
+import 'package:DoctorsBooking/screens/result.dart';
 import 'package:DoctorsBooking/widgets/customappbar.dart';
+import 'package:DoctorsBooking/widgets/homepageitem.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -25,6 +28,26 @@ class _HomePageState extends State<HomePage> {
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJQtnoIW8DcWTBL-C9vMA3CQOMUxQA1GEbtA&usqp=CAU'
     ],
   };
+
+  Map<int, List> offers = {
+    0: [
+      '25% Off',
+      'https://img.freepik.com/free-vector/discount-concept-illustration_114360-1852.jpg?size=626&ext=jpg'
+    ],
+    1: [
+      '50% Off',
+      'https://image.freepik.com/free-vector/discount-loyalty-card-loyalty-program-customer-service-rewards-card-points-concept-isolated-concept-illustration-with-tiny-people-floral-elements-hero-image-website_126608-770.jpg'
+    ],
+    2: [
+      'up to 75%',
+      'https://image.freepik.com/free-vector/people-celebrating-with-gift-card-voucher-isolated-flat-vector-illustration-cartoon-happy-customers-winning-abstract-prize-certificate-discount-coupon-creative-strategy-camp-money_74855-8500.jpg'
+    ],
+    3: [
+      '10% off',
+      'https://image.freepik.com/free-vector/black-friday-shop-people-buying-super-discount-shop-online-service-promo-purchase-marketing-illustration_101179-927.jpg'
+    ],
+  };
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,13 +103,19 @@ class _HomePageState extends State<HomePage> {
               height: MediaQuery.of(context).size.height / 3,
               child: scrollSection(categories),
             ),
+            headLine('Today Offers'),
+            Container(
+              height: MediaQuery.of(context).size.height / 3,
+              child: scrollSection(offers),
+            ),
             headLine("Suggested Doctors"),
             suggestedDoctors("Dr. Mohamed Ahmed", "assets/images/doctor2.png",
                 "General", " 4.7   25 Reviews"),
             suggestedDoctors("Dr. Ahmed Samy", "assets/images/doctor2.png",
                 "Dental", " 4.9   35 Reviews"),
             suggestedDoctors("Dr. Ali Hassan", "assets/images/doctor2.png",
-                "Cardio", " 4.8   45 Reviews")
+                "Cardio", " 4.8   45 Reviews"),
+            headLine("My Appointments"),
           ],
         ),
       ),
@@ -101,6 +130,15 @@ class _HomePageState extends State<HomePage> {
               fontSize: 20.0,
               fontWeight: FontWeight.bold)),
       trailing: Icon(Icons.navigate_next, color: Colors.grey, size: 25),
+      onTap: () {
+        return Navigator.push(context, MaterialPageRoute(builder: (_) {
+          if (title == "Suggested Doctors") {
+            return Result();
+          } else {
+            return CategoriesAndOffers(title);
+          }
+        }));
+      },
     );
   }
 
@@ -109,24 +147,7 @@ class _HomePageState extends State<HomePage> {
       scrollDirection: Axis.horizontal,
       itemCount: categories.length,
       itemBuilder: (context, index) {
-        return Container(
-          width: MediaQuery.of(context).size.width / 2.5,
-          margin: EdgeInsets.all(10.0),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            image: DecorationImage(
-              image: NetworkImage(map[index][1]),
-              fit: BoxFit.fill,
-              colorFilter: ColorFilter.mode(Colors.black38, BlendMode.color),
-            ),
-          ),
-          alignment: Alignment.bottomCenter,
-          child: Text(
-            map[index][0],
-            style: TextStyle(
-                color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
-          ),
-        );
+        return HomePageItem(map, index);
       },
     );
   }
