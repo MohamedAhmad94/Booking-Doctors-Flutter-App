@@ -33,7 +33,7 @@ class _DoctorsState extends State<Doctors> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(
-            height: 122.0,
+            height: 125.0,
             width: MediaQuery.of(context).size.width / 4,
             decoration: BoxDecoration(
               shape: BoxShape.circle,

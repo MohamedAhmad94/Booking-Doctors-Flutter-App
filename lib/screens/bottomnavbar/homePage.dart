@@ -1,4 +1,6 @@
+import 'package:DoctorsBooking/screens/bottomnavbar/appointments.dart';
 import 'package:DoctorsBooking/screens/categoriesandoffers.dart';
+import 'package:DoctorsBooking/screens/doctorProfile.dart';
 import 'package:DoctorsBooking/screens/result.dart';
 import 'package:DoctorsBooking/widgets/customappbar.dart';
 import 'package:DoctorsBooking/widgets/homepageitem.dart';
@@ -134,6 +136,8 @@ class _HomePageState extends State<HomePage> {
         return Navigator.push(context, MaterialPageRoute(builder: (_) {
           if (title == "Suggested Doctors") {
             return Result();
+          } else if (title == "My Appointments") {
+            return Appointments();
           } else {
             return CategoriesAndOffers(title);
           }
@@ -193,9 +197,18 @@ class _HomePageState extends State<HomePage> {
                       fontWeight: FontWeight.bold),
                 ),
               ],
-            )
+            ),
           ],
         ),
+        trailing: Icon(Icons.navigate_next, color: Colors.grey, size: 25),
+        onTap: () {
+          return Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) {
+              return DoctorProfile();
+            }),
+          );
+        },
       ),
     );
   }

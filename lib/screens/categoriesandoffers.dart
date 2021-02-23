@@ -67,7 +67,7 @@ class _CategoriesAndOffersState extends State<CategoriesAndOffers> {
             style: TextStyle(
                 color: Colors.black,
                 fontSize: 20.0,
-                fontWeight: FontWeight.normal)),
+                fontWeight: FontWeight.bold)),
         centerTitle: true,
         backgroundColor: Colors.transparent,
       ),
@@ -76,7 +76,7 @@ class _CategoriesAndOffersState extends State<CategoriesAndOffers> {
         margin: EdgeInsets.all(10),
         child: GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, childAspectRatio: 0.8),
+                crossAxisCount: 2, childAspectRatio: 0.85),
             scrollDirection: Axis.vertical,
             itemCount: widget.className == "Categories"
                 ? categories.length

@@ -31,7 +31,7 @@ class _ResultState extends State<Result> {
     3: [
       Icons.keyboard_arrow_down_rounded,
       'Speciality',
-      ['General', 'Cardio', 'Dental', 'pediatric']
+      ['General', 'Cardio', 'Dental', 'Pediatric']
     ],
     4: [
       Icons.keyboard_arrow_down_rounded,
