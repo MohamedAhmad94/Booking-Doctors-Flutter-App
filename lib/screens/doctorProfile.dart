@@ -1,4 +1,6 @@
 import 'package:DoctorsBooking/widgets/rating.dart';
+import 'package:DoctorsBooking/widgets/favicon.dart';
+import 'package:DoctorsBooking/widgets/reviewitem.dart';
 import 'package:flutter/material.dart';
 
 class DoctorProfile extends StatefulWidget {
@@ -8,26 +10,11 @@ class DoctorProfile extends StatefulWidget {
 
 class _DoctorProfileState extends State<DoctorProfile> {
   bool pressed = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.grey[50],
-        appBar: AppBar(
-          leading: IconButton(
-              icon: Icon(Icons.arrow_back_ios),
-              onPressed: () {
-                Navigator.pop(context);
-              }),
-          iconTheme: IconThemeData(color: Colors.black, size: 20),
-          title: Text("Doctor Profile",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold)),
-          centerTitle: true,
-          backgroundColor: Colors.transparent,
-          elevation: 0.0,
-        ),
         body: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
@@ -35,104 +22,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
           child: ListView(
             scrollDirection: Axis.vertical,
             children: [
-              Container(
-                height: 200,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: NetworkImage(
-                          "https://s3-eu-west-1.amazonaws.com/intercare-web-public/wysiwyg-uploads%2F1569586526901-doctor.jpg"),
-                      fit: BoxFit.fill),
-                ),
-              ),
-              doctorCard(
-                250,
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Dr. Ashraf Sayed",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                height: 1.5)),
-                        Text("Dental",
-                            style: TextStyle(
-                                color: Color(0xff00BBDC),
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                height: 1.5)),
-                        Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            ratingBar(4.0),
-                            Text("168 Reviews",
-                                style: TextStyle(
-                                    color: Color(0xff00BBDC),
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.bold,
-                                    height: 1.5)),
-                          ],
-                        ),
-                        Text("Giza - Egypt",
-                            style: TextStyle(
-                                color: Colors.black54,
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold,
-                                height: 1.5)),
-                        Text("EGP 200",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                height: 1.5)),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            IconButton(
-                                icon: Icon(Icons.calendar_today),
-                                iconSize: 40,
-                                color: Color(0xff00BBDC),
-                                onPressed: null),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Text("Book Appointement",
-                                    style: TextStyle(
-                                        color: Color(0xff00BBDC),
-                                        fontSize: 18.0,
-                                        fontWeight: FontWeight.bold,
-                                        height: 1)),
-                                Text(
-                                    "Typically gets confirmed\n within 2 hours.",
-                                    style: TextStyle(
-                                        color: Colors.black54,
-                                        fontSize: 15.0,
-                                        fontWeight: FontWeight.normal)),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    IconButton(
-                        icon: Icon(pressed == false
-                            ? Icons.favorite_border
-                            : Icons.favorite),
-                        iconSize: 30,
-                        color: Color(0xff00BBDC),
-                        onPressed: () {
-                          setState(() {
-                            pressed = !pressed;
-                          });
-                        })
-                  ],
-                ),
-              ),
+              barItem(),
               headline("Biography"),
               doctorCard(
                 225,
@@ -202,18 +92,19 @@ class _DoctorProfileState extends State<DoctorProfile> {
               ),
               headline("Rating"),
               doctorCard(
-                380,
+                450,
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     ListTile(
                         leading: Text(
                           "4.0",
                           style: TextStyle(
                               color: Colors.black,
-                              fontSize: 20,
+                              fontSize: 35,
                               fontWeight: FontWeight.bold,
-                              height: 3),
+                              height: 1),
                         ),
                         title: Text(
                           "Overall Rating",
@@ -231,27 +122,22 @@ class _DoctorProfileState extends State<DoctorProfile> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            ratings("5"),
-                            ratings("4"),
-                            ratings("3"),
-                            ratings("2"),
-                            ratings("1"),
+                            ratings(5, 5.0),
+                            ratings(4, 4.0),
+                            ratings(3, 3.0),
+                            ratings(2, 2.0),
+                            ratings(1, 1.0),
                           ],
-                        ),
-                        VerticalDivider(
-                          color: Colors.yellow,
-                          thickness: 5,
-                          width: 20.0,
                         ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            detailedRatings("Explains Condition Well", "4.8"),
-                            detailedRatings("Answers Questions", "4.2"),
-                            detailedRatings("Punctionality", "3.2"),
-                            detailedRatings("Professionalism", "3.2"),
-                            detailedRatings("Attitution", "3.2"),
+                            detailedRatings("Explains Condition Well", 4.8),
+                            detailedRatings("Answers Questions", 4.2),
+                            detailedRatings("Punctionality", 3.2),
+                            detailedRatings("Professionalism", 3.2),
+                            detailedRatings("Attitution", 3.2),
                           ],
                         ),
                       ],
@@ -286,28 +172,30 @@ class _DoctorProfileState extends State<DoctorProfile> {
         ));
   }
 
-  ratings(String rate) {
+  ratings(int rate, double width) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        Text(rate,
+        Text("${rate.toString()}",
             style: TextStyle(
                 color: Colors.black,
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
                 height: 1)),
-        Icon(
-          Icons.horizontal_rule,
-          color: Colors.yellow,
-          size: 20,
+        Container(
+          margin: EdgeInsets.all(10),
+          height: 8.0,
+          color: Colors.amber,
+          width: width * 15,
         ),
       ],
     );
   }
 
-  detailedRatings(String type, String rating) {
+  detailedRatings(String type, double rating) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
           type,
@@ -318,7 +206,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
               height: 1),
         ),
         Text(
-          rating,
+          "${rating.toString()}",
           style: TextStyle(
               color: Colors.black,
               fontSize: 14,
@@ -350,9 +238,11 @@ class _DoctorProfileState extends State<DoctorProfile> {
 
   doctorCard(double height, Widget widget) {
     return Card(
-      elevation: 20.0,
+      elevation: 10.0,
       shadowColor: Colors.black,
       margin: EdgeInsets.all(20),
+      color: Colors.white,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
       child: Container(
         height: height,
         margin: EdgeInsets.all(10),
@@ -368,11 +258,132 @@ class _DoctorProfileState extends State<DoctorProfile> {
 
   headline(String title) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(5.0),
       child: Text(
         title,
         style: TextStyle(
             color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+      ),
+    );
+  }
+
+  barItem() {
+    return Container(
+      height: 450,
+      margin: EdgeInsets.only(bottom: 10.0),
+      child: Stack(
+        children: [
+          Container(
+            height: 250,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage(
+                    "https://s3-eu-west-1.amazonaws.com/intercare-web-public/wysiwyg-uploads%2F1569586526901-doctor.jpg"),
+                fit: BoxFit.fill,
+              ),
+            ),
+            alignment: Alignment.topCenter,
+            child: ListTile(
+              leading: IconButton(
+                  icon: Icon(Icons.arrow_back_ios),
+                  color: Colors.black,
+                  iconSize: 30.0,
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }),
+              title: Text("Doctor Profile",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold)),
+            ),
+          ),
+          Positioned(
+            bottom: 0.0,
+            left: 10.0,
+            right: 10,
+            top: 150,
+            child: Container(
+              height: 250,
+              margin: EdgeInsets.all(20),
+              child: Card(
+                color: Colors.white,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                elevation: 10.0,
+                child: Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Dr. Mohamed Ahmed",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  height: 1.5)),
+                          Text("Dental",
+                              style: TextStyle(
+                                  color: Color(0xff00BBDC),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  height: 1.5)),
+                          ReviewItem(4.0, 165),
+                          Text("Giza - Egypt",
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.bold,
+                                  height: 1.5)),
+                          Text("EGP 200",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  height: 1.5)),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            // mainAxisSize: MainAxisSize.min,
+                            children: [
+                              IconButton(
+                                  icon: Icon(Icons.calendar_today),
+                                  iconSize: 40,
+                                  color: Color(0xff00BBDC),
+                                  onPressed: null),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Text("Book Appointement",
+                                      style: TextStyle(
+                                          color: Color(0xff00BBDC),
+                                          fontSize: 18.0,
+                                          fontWeight: FontWeight.bold,
+                                          height: 1)),
+                                  Text(
+                                      "Typically gets confirmed\n within 2 hours.",
+                                      style: TextStyle(
+                                          color: Colors.black54,
+                                          fontSize: 15.0,
+                                          fontWeight: FontWeight.normal)),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      FavIcon(),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
