@@ -131,7 +131,7 @@ class _LoginState extends State<Login> {
                 },
               );
             }),
-            SizedBox(height: 10.0),
+            SizedBox(height: 5.0),
             FlatButton(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
