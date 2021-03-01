@@ -258,7 +258,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
 
   headline(String title) {
     return Padding(
-      padding: const EdgeInsets.all(5.0),
+      padding: const EdgeInsets.all(8.0),
       child: Text(
         title,
         style: TextStyle(

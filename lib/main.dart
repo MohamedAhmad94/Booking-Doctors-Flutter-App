@@ -1,4 +1,4 @@
-import 'package:DoctorsBooking/screens/bottomnavbar/bottomnavbar.dart';
+import 'package:DoctorsBooking/screens/login.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BottomNavBar(),
+      home: Login(),
     );
   }
 }

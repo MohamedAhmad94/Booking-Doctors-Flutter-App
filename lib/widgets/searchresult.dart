@@ -1,5 +1,7 @@
+import 'package:DoctorsBooking/screens/doctorProfile.dart';
 import 'package:flutter/material.dart';
-import 'package:DoctorsBooking/widgets/rating.dart';
+import 'package:DoctorsBooking/widgets/favicon.dart';
+import 'package:DoctorsBooking/widgets/reviewitem.dart';
 
 class SearchResult extends StatefulWidget {
   final String doctorName;
@@ -69,33 +71,7 @@ class _SearchResultState extends State<SearchResult> {
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           height: 1.5)),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      RatingBar(
-                        onRatingUpdate: null,
-                        direction: Axis.horizontal,
-                        initialRating: widget.rating,
-                        itemCount: 5,
-                        itemSize: 15.0,
-                        minRating: 1.0,
-                        maxRating: 5.0,
-                        ratingWidget: RatingWidget(
-                            full: Icon(Icons.star, color: Colors.yellow),
-                            half: Icon(Icons.star_half, color: Colors.yellow),
-                            empty:
-                                Icon(Icons.star_border, color: Colors.yellow)),
-                        glowColor: Colors.yellow,
-                        unratedColor: Colors.grey,
-                      ),
-                      Text("${widget.reviews.toString()} Reviews",
-                          style: TextStyle(
-                              color: Color(0xff00BBDC),
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.bold,
-                              height: 1.5)),
-                    ],
-                  ),
+                  ReviewItem(widget.rating, widget.reviews),
                   Text(widget.location,
                       style: TextStyle(
                           color: Colors.black54,
@@ -118,17 +94,7 @@ class _SearchResultState extends State<SearchResult> {
                               fontSize: 18.0,
                               fontWeight: FontWeight.bold,
                               height: 1)),
-                      IconButton(
-                          icon: Icon(pressed == false
-                              ? Icons.favorite_border
-                              : Icons.favorite),
-                          color: Color(0xff00BBDC),
-                          iconSize: 25.0,
-                          onPressed: () {
-                            setState(() {
-                              pressed = !pressed;
-                            });
-                          }),
+                      FavIcon(),
                       Text("Book",
                           style: TextStyle(
                               color: Color(0xff00BBDC),
@@ -139,7 +105,12 @@ class _SearchResultState extends State<SearchResult> {
                           icon: Icon(Icons.calendar_today),
                           color: Color(0xff00BBDC),
                           iconSize: 25.0,
-                          onPressed: () {})
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (_) {
+                              return DoctorProfile();
+                            }));
+                          })
                     ],
                   ),
                 ],
