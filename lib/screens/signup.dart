@@ -13,10 +13,19 @@ class _SignUpState extends State<SignUp> {
   TextEditingController emailController = TextEditingController();
   TextEditingController mobileNumberController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  TextEditingController resetEmailController = TextEditingController();
 
   bool pressed = true;
-  bool check = false;
+  bool checked = false;
+  String countryCode = "Code";
+
+  GlobalKey<FormState> nameKey = GlobalKey<FormState>();
+  GlobalKey<FormState> emailKey = GlobalKey<FormState>();
+  GlobalKey<FormState> numberKey = GlobalKey<FormState>();
+  GlobalKey<FormState> passwordKey = GlobalKey<FormState>();
+
+  final _formKey = GlobalKey<FormState>();
+
+  DateTime birthDate = DateTime(1950);
 
   @override
   Widget build(BuildContext context) {
@@ -24,211 +33,247 @@ class _SignUpState extends State<SignUp> {
       backgroundColor: Colors.grey[50],
       body: Container(
         margin: EdgeInsets.all(10),
-        child: ListView(
-          scrollDirection: Axis.vertical,
-          children: [
-            Container(
-              height: 150,
-              margin: EdgeInsets.fromLTRB(10, 10, 10, 30),
-              width: MediaQuery.of(context).size.width / 3,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage(
-                      "https://mms.businesswire.com/media/20160202006046/en/507319/5/dod-logo-icon-large_%281%29.jpg"),
+        child: Form(
+          key: _formKey,
+          child: ListView(
+            scrollDirection: Axis.vertical,
+            children: [
+              Container(
+                height: 150,
+                margin: EdgeInsets.fromLTRB(10, 10, 10, 30),
+                width: MediaQuery.of(context).size.width / 3,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: NetworkImage(
+                        "https://mms.businesswire.com/media/20160202006046/en/507319/5/dod-logo-icon-large_%281%29.jpg"),
+                  ),
+                  shape: BoxShape.circle,
                 ),
-                shape: BoxShape.circle,
               ),
-            ),
-            field("Your Name", Icons.person_outline, TextInputType.name, false,
-                nameController),
-            field("Email Address", Icons.email, TextInputType.emailAddress,
-                false, emailController),
-            field("Mobile Number", Icons.phone, TextInputType.number, false,
-                mobileNumberController),
-            field("Password", Icons.lock, TextInputType.text, pressed,
-                passwordController),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: InkWell(
-                child: Text("Forgot Password?",
-                    style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 17.0,
-                        fontWeight: FontWeight.bold,
-                        height: 1.5)),
-                onTap: () {
-                  return showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                          backgroundColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.0)),
-                          title: Text(
-                            "Enter Your Email",
+              field("Your Name", Icons.person_outline, TextInputType.name,
+                  false, nameController, nameKey),
+              field("Email Address", Icons.email, TextInputType.emailAddress,
+                  false, emailController, emailKey),
+              Row(
+                children: [
+                  PopupMenuButton(
+                    child: Text(
+                      countryCode,
+                      style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0)),
+                    itemBuilder: (BuildContext context) {
+                      return <PopupMenuEntry<String>>[
+                        PopupMenuItem(
+                          child: Text(
+                            "Egypt +2",
                             style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 18.0,
+                                fontSize: 15.0,
                                 fontWeight: FontWeight.bold),
                           ),
-                          content: field(
-                              "Email Address",
-                              Icons.email,
-                              TextInputType.emailAddress,
-                              false,
-                              resetEmailController),
-                          actions: [
-                            FlatButton(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  side: BorderSide(
-                                      color: Colors.grey, width: 0.5)),
-                              color: Colors.transparent,
-                              child: Text("Send Code",
-                                  style: TextStyle(
-                                      color: Colors.grey,
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.bold)),
-                              onPressed: () {},
-                            ),
-                            FlatButton(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  side: BorderSide(
-                                      color: Colors.grey, width: 0.5)),
-                              color: Colors.transparent,
-                              child: Text("Cancel",
-                                  style: TextStyle(
-                                      color: Colors.grey,
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.bold)),
-                              onPressed: () {
-                                return Navigator.pop(context);
-                              },
-                            ),
-                          ],
-                        );
+                          value: "+2",
+                        ),
+                        PopupMenuItem(
+                          child: Text(
+                            "UAE +967",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          value: "+96",
+                        ),
+                        PopupMenuItem(
+                          child: Text(
+                            "Kuwait +965",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          value: "+965",
+                        ),
+                        PopupMenuItem(
+                          child: Text(
+                            "KSA +966",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          value: "+966",
+                        ),
+                      ];
+                    },
+                    onSelected: (value) {
+                      setState(() {
+                        countryCode = value;
                       });
-                },
+                    },
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width / 1.2,
+                    child: field(
+                        "Mobile Number",
+                        Icons.phone,
+                        TextInputType.number,
+                        false,
+                        mobileNumberController,
+                        numberKey),
+                  )
+                ],
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Checkbox(
-                  value: check,
-                  activeColor: Color(0xff00BBDC),
-                  checkColor: Colors.blue,
-                  hoverColor: Colors.white,
-                  onChanged: (value) {
-                    setState(() {
-                      check = value;
-                    });
-                  },
+              field("Password", Icons.lock, TextInputType.text, pressed,
+                  passwordController, passwordKey),
+              ListTile(
+                title: Text(
+                  "Date of Birth",
+                  style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold),
                 ),
-                Text(
-                  "I accept the terms and conditions",
+                subtitle: Text(
+                  "${birthDate.toString().substring(0, 10)}",
                   style: TextStyle(
                       color: Colors.grey,
                       fontSize: 17.0,
                       fontWeight: FontWeight.bold),
                 ),
-              ],
-            ),
-            SizedBox(height: 5.0),
-            Builder(builder: (BuildContext context) {
-              return FlatButton(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)),
-                color: Color(0xff00BBDC),
-                child: Text(
-                  "Create account",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold),
-                ),
-                onPressed: () {
-                  if (nameController.text.isEmpty) {
-                    return Scaffold.of(context)
-                        .showSnackBar(missingData("Your Name is Required"));
-                  } else if (emailController.text.isEmpty) {
-                    return Scaffold.of(context)
-                        .showSnackBar(missingData("Email is Required"));
-                  } else if (mobileNumberController.text.isEmpty) {
-                    return Scaffold.of(context)
-                        .showSnackBar(missingData("Mobile Number is Required"));
-                  } else if (passwordController.text.isEmpty) {
-                    return Scaffold.of(context)
-                        .showSnackBar(missingData("Password is Required"));
-                  } else if (check = false) {
-                    return Scaffold.of(context).showSnackBar(
-                        missingData("Accepting the Terms is required"));
-                  } else {
-                    return Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (_) {
-                      return BottomNavBar();
-                    }));
-                  }
+                onTap: () async {
+                  var _pickedDate = await showDatePicker(
+                    context: context,
+                    firstDate: DateTime(1950),
+                    lastDate: DateTime(2002),
+                    initialDate: DateTime(1950),
+                  );
+                  setState(() {
+                    birthDate = _pickedDate;
+                  });
                 },
-              );
-            }),
-            SizedBox(height: 5.0),
-            FlatButton(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  side: BorderSide(color: Colors.grey, width: 0.5)),
-              color: Colors.transparent,
-              child: Row(
+              ),
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CircleAvatar(
-                    minRadius: 20.0,
-                    maxRadius: 20.0,
-                    backgroundImage: NetworkImage(
-                        "https://www.pngitem.com/pimgs/m/118-1181708_google-icon-google-logo-design-flaws-hd-png.png"),
+                  Checkbox(
+                    value: checked,
+                    activeColor: Color(0xff00BBDC),
+                    checkColor: Colors.blue,
+                    hoverColor: Colors.white,
+                    onChanged: (value) {
+                      setState(() {
+                        checked = value;
+                      });
+                    },
                   ),
                   Text(
-                    "Sign up with Google",
+                    "I accept the terms and conditions",
                     style: TextStyle(
                         color: Colors.grey,
-                        fontSize: 20.0,
+                        fontSize: 17.0,
                         fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
-              onPressed: () {},
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: InkWell(
-                child: Text(
-                  "Have an account?",
-                  style: TextStyle(
-                      color: Color(0xff00BBDC),
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                      height: 2.5),
+              SizedBox(height: 5.0),
+              Builder(builder: (BuildContext context) {
+                return FlatButton(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)),
+                  color: Color(0xff00BBDC),
+                  child: Text(
+                    "Create account",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  onPressed: () {
+                    if (!_formKey.currentState.validate()) {
+                      return Scaffold.of(context)
+                          .showSnackBar(missingData("All Fields are Required"));
+                    } else if (checked == false) {
+                      return Scaffold.of(context).showSnackBar(
+                          missingData("Accepting the Terms is required"));
+                    } else {
+                      return Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (_) {
+                        return BottomNavBar();
+                      }));
+                    }
+                  },
+                );
+              }),
+              SizedBox(height: 5.0),
+              FlatButton(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    side: BorderSide(color: Colors.grey, width: 0.5)),
+                color: Colors.transparent,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                      minRadius: 20.0,
+                      maxRadius: 20.0,
+                      backgroundImage: NetworkImage(
+                          "https://www.pngitem.com/pimgs/m/118-1181708_google-icon-google-logo-design-flaws-hd-png.png"),
+                    ),
+                    Text(
+                      "Sign up with Google",
+                      style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
                 ),
-                onTap: () {
-                  return Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (_) {
-                    return Login();
-                  }));
-                },
+                onPressed: () {},
               ),
-            ),
-          ],
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: InkWell(
+                  child: Text(
+                    "Have an account?",
+                    style: TextStyle(
+                        color: Color(0xff00BBDC),
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        height: 2.5),
+                  ),
+                  onTap: () {
+                    return Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (_) {
+                      return Login();
+                    }));
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 
   field(String label, IconData icon, TextInputType type, bool obscure,
-      TextEditingController controller) {
+      TextEditingController controller, Key key) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: TextField(
+      child: TextFormField(
+        key: key,
+        validator: (value) {
+          if (value.isEmpty) {
+            return "This Field's Required";
+          } else {
+            return null;
+          }
+        },
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15.0),
@@ -248,26 +293,7 @@ class _SignUpState extends State<SignUp> {
           ),
           labelText: label,
           labelStyle: TextStyle(color: Colors.grey),
-          prefix: label == "Mobile Number"
-              ? Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Image(
-                      image: NetworkImage(
-                          "https://www.countryflags.com/wp-content/uploads/egypt-flag-png-large.png"),
-                      width: 25,
-                      height: 25,
-                    ),
-                    Text(
-                      " +2",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                )
-              : Icon(icon, color: Colors.grey),
+          prefixIcon: Icon(icon, color: Colors.grey),
           suffixIcon: label == "Password"
               ? IconButton(
                   icon: Icon(Icons.remove_red_eye),
