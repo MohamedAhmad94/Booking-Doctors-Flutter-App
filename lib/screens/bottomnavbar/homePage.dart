@@ -50,6 +50,8 @@ class _HomePageState extends State<HomePage> {
     ],
   };
 
+  TextEditingController searchController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,14 +69,7 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.white24,
                   borderRadius: BorderRadius.circular(20.0),
                 ),
-                child: ListTile(
-                  leading: Icon(Icons.search, color: Colors.white, size: 25.0),
-                  title: Text("Search By Location",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 17.0,
-                          fontWeight: FontWeight.normal)),
-                ),
+                child: searchField(),
               ),
               'Home',
             ),
@@ -210,6 +205,27 @@ class _HomePageState extends State<HomePage> {
           );
         },
       ),
+    );
+  }
+
+  searchField() {
+    return TextField(
+      decoration: InputDecoration(
+        border: InputBorder.none,
+        enabledBorder: InputBorder.none,
+        focusedBorder: InputBorder.none,
+        labelText: 'Search By Location',
+        labelStyle: TextStyle(color: Colors.white),
+        prefixIcon: Icon(Icons.search, color: Colors.white),
+      ),
+      textInputAction: TextInputAction.search,
+      keyboardType: TextInputType.text,
+      controller: searchController,
+      onSubmitted: (value) {
+        return Navigator.push(context, MaterialPageRoute(builder: (_) {
+          return Result();
+        }));
+      },
     );
   }
 }
