@@ -1,4 +1,3 @@
-import 'package:DoctorsBooking/widgets/rating.dart';
 import 'package:flutter/material.dart';
 
 class ReviewItem extends StatefulWidget {
@@ -17,30 +16,30 @@ class _ReviewItemState extends State<ReviewItem> {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        RatingBar(
-          onRatingUpdate: null,
-          direction: Axis.horizontal,
-          initialRating: widget.rating,
-          itemCount: 5,
-          itemSize: 15,
-          minRating: 1.0,
-          maxRating: 5.0,
-          ratingWidget: RatingWidget(
-              full: Icon(
-                Icons.star,
-                color: Colors.yellow,
-              ),
-              half: Icon(
-                Icons.star_half,
-                color: Colors.yellow,
-              ),
-              empty: Icon(
-                Icons.star_border,
-                color: Colors.yellow,
-              )),
-          glowColor: Colors.yellow,
-          unratedColor: Colors.grey,
-        ),
+        // RatingBar(
+        //   onRatingUpdate: null,
+        //   direction: Axis.horizontal,
+        //   initialRating: widget.rating,
+        //   itemCount: 5,
+        //   itemSize: 15,
+        //   minRating: 1.0,
+        //   maxRating: 5.0,
+        //   ratingWidget: RatingWidget(
+        //       full: Icon(
+        //         Icons.star,
+        //         color: Colors.yellow,
+        //       ),
+        //       half: Icon(
+        //         Icons.star_half,
+        //         color: Colors.yellow,
+        //       ),
+        //       empty: Icon(
+        //         Icons.star_border,
+        //         color: Colors.yellow,
+        //       )),
+        //   glowColor: Colors.yellow,
+        //   unratedColor: Colors.grey,
+        // ),
         Text(
           '  ( ${widget.reviews.toString()} Reviews)',
           style: TextStyle(

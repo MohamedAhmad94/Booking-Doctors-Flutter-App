@@ -1,6 +1,7 @@
-import 'package:DoctorsBooking/screens/bottomnavbar/bottomnavbar.dart';
-import 'package:DoctorsBooking/screens/signup.dart';
+import 'package:doctors_booking/screens/bottomnavbar/bottomnavbar.dart';
+import 'package:doctors_booking/screens/signup.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -58,7 +59,7 @@ class _LoginState extends State<Login> {
                           fontWeight: FontWeight.bold,
                           height: 1.5)),
                   onTap: () {
-                    return showDialog(
+                    showDialog(
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
@@ -77,12 +78,14 @@ class _LoginState extends State<Login> {
                                 false,
                                 resetEmailController),
                             actions: [
-                              FlatButton(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15),
-                                    side: BorderSide(
-                                        color: Colors.grey, width: 0.5)),
-                                color: Colors.transparent,
+                              TextButton(
+                                style: TextButton.styleFrom(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(15),
+                                      side: BorderSide(
+                                          color: Colors.grey, width: 0.5)),
+                                  backgroundColor: Colors.transparent,
+                                ),
                                 child: Text("Send Code",
                                     style: TextStyle(
                                         color: Colors.grey,
@@ -90,12 +93,14 @@ class _LoginState extends State<Login> {
                                         fontWeight: FontWeight.bold)),
                                 onPressed: () {},
                               ),
-                              FlatButton(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15),
-                                    side: BorderSide(
-                                        color: Colors.grey, width: 0.5)),
-                                color: Colors.transparent,
+                              TextButton(
+                                style: TextButton.styleFrom(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(15),
+                                      side: BorderSide(
+                                          color: Colors.grey, width: 0.5)),
+                                  backgroundColor: Colors.transparent,
+                                ),
                                 child: Text("Cancel",
                                     style: TextStyle(
                                         color: Colors.grey,
@@ -113,10 +118,12 @@ class _LoginState extends State<Login> {
               ),
               SizedBox(height: 5.0),
               Builder(builder: (BuildContext context) {
-                return FlatButton(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)),
-                  color: Color(0xff00BBDC),
+                return TextButton(
+                  style: TextButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    backgroundColor: Color(0xff00BBDC),
+                  ),
                   child: Text(
                     "Log in",
                     style: TextStyle(
@@ -125,11 +132,11 @@ class _LoginState extends State<Login> {
                         fontWeight: FontWeight.bold),
                   ),
                   onPressed: () {
-                    if (!_formKey.currentState.validate()) {
-                      return Scaffold.of(context)
+                    if (!_formKey.currentState!.validate()) {
+                      ScaffoldMessenger.of(context)
                           .showSnackBar(missingData("All Fields are Required"));
                     } else {
-                      return Navigator.pushReplacement(context,
+                      Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (_) {
                         return BottomNavBar();
                       }));
@@ -138,12 +145,14 @@ class _LoginState extends State<Login> {
                 );
               }),
               SizedBox(height: 5.0),
-              FlatButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  side: BorderSide(color: Colors.grey, width: 0.5),
+              TextButton(
+                style: TextButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    side: BorderSide(color: Colors.grey, width: 0.5),
+                  ),
+                  backgroundColor: Colors.transparent,
                 ),
-                color: Colors.transparent,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -176,8 +185,7 @@ class _LoginState extends State<Login> {
                         height: 2.5),
                   ),
                   onTap: () {
-                    return Navigator.push(context,
-                        MaterialPageRoute(builder: (_) {
+                    Navigator.push(context, MaterialPageRoute(builder: (_) {
                       return SignUp();
                     }));
                   },
@@ -192,13 +200,13 @@ class _LoginState extends State<Login> {
 
   field(String label, IconData icon, TextInputType type, bool obsecure,
       TextEditingController controller,
-      {Key key}) {
+      {Key? key}) {
     return Padding(
       padding: const EdgeInsets.all(8),
       child: TextFormField(
         key: key,
         validator: (value) {
-          if (value.isEmpty) {
+          if (value!.isEmpty) {
             return "This Field's Required";
           } else {
             return null;
@@ -253,5 +261,15 @@ class _LoginState extends State<Login> {
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(15), topRight: Radius.circular(15.0))),
     );
+  }
+
+  Future<bool> saveData() async {
+    try {
+      SharedPreferences _user = await SharedPreferences.getInstance();
+      _user.setString("email", emailController.text);
+      return true;
+    } catch (e) {
+      return false;
+    }
   }
 }

@@ -1,6 +1,6 @@
-import 'package:DoctorsBooking/screens/bottomnavbar/appointments.dart';
-import 'package:DoctorsBooking/screens/bottomnavbar/homePage.dart';
-import 'package:DoctorsBooking/screens/bottomnavbar/profile.dart';
+import 'package:doctors_booking/screens/bottomnavbar/appointments.dart';
+import 'package:doctors_booking/screens/bottomnavbar/homePage.dart';
+import 'package:doctors_booking/screens/bottomnavbar/profile.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavBar extends StatefulWidget {

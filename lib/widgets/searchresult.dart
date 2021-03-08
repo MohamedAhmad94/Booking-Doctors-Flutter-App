@@ -1,17 +1,17 @@
-import 'package:DoctorsBooking/screens/doctorProfile.dart';
+import 'package:doctors_booking/screens/doctorProfile.dart';
 import 'package:flutter/material.dart';
-import 'package:DoctorsBooking/widgets/favicon.dart';
-import 'package:DoctorsBooking/widgets/reviewitem.dart';
+import 'package:doctors_booking/widgets/favicon.dart';
+import 'package:doctors_booking/widgets/reviewitem.dart';
 
 class SearchResult extends StatefulWidget {
-  final String doctorName;
-  final String type;
-  final int reviews;
-  final String image;
-  final double rating;
-  final String location;
-  final int fees;
-  final String currency;
+  final String? doctorName;
+  final String? type;
+  final int? reviews;
+  final String? image;
+  final double? rating;
+  final String? location;
+  final int? fees;
+  final String? currency;
 
   SearchResult(
       {this.doctorName,
@@ -51,7 +51,7 @@ class _SearchResultState extends State<SearchResult> {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   image: DecorationImage(
-                    image: NetworkImage(widget.image),
+                    image: NetworkImage(widget.image!),
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -59,20 +59,20 @@ class _SearchResultState extends State<SearchResult> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(widget.doctorName,
+                  Text(widget.doctorName!,
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           height: 1.5)),
-                  Text(widget.type,
+                  Text(widget.type!,
                       style: TextStyle(
                           color: Color(0xff00BBDC),
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           height: 1.5)),
-                  ReviewItem(widget.rating, widget.reviews),
-                  Text(widget.location,
+                  ReviewItem(widget.rating!, widget.reviews!),
+                  Text(widget.location!,
                       style: TextStyle(
                           color: Colors.black54,
                           fontSize: 16.0,

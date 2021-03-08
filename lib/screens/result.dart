@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:DoctorsBooking/widgets/searchresult.dart';
+import 'package:doctors_booking/widgets/searchresult.dart';
 
 class Result extends StatefulWidget {
   @override
@@ -98,7 +98,7 @@ class _ResultState extends State<Result> {
     );
   }
 
-  filter(Map map) {
+  filter(Map<int, List> map) {
     return Container(
       height: 60.0,
       child: ListView.builder(
@@ -141,7 +141,7 @@ class _FilterItemmState extends State<FilterItemm> {
                   children: [
                     SafeArea(
                       top: true,
-                      child: Text("${widget.map[widget.index][1]}",
+                      child: Text("${widget.map[widget.index]![1]}",
                           style: TextStyle(
                               color: Color(0xff00BBDC),
                               fontWeight: FontWeight.bold,
@@ -151,10 +151,10 @@ class _FilterItemmState extends State<FilterItemm> {
                     Flexible(
                       child: ListView.builder(
                           scrollDirection: Axis.vertical,
-                          itemCount: widget.map[widget.index][2].length,
+                          itemCount: widget.map[widget.index]![2].length,
                           itemBuilder: (context, index) {
                             return filterSubItem(
-                                widget.map[widget.index][2][index]);
+                                widget.map[widget.index]![2][index]);
                           }),
                     ),
                   ],
@@ -173,7 +173,7 @@ class _FilterItemmState extends State<FilterItemm> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              '${widget.map[widget.index][1]} ',
+              '${widget.map[widget.index]![1]} ',
               style: TextStyle(
                   color: Color(0xff00BBDC),
                   fontWeight: FontWeight.bold,
@@ -181,7 +181,7 @@ class _FilterItemmState extends State<FilterItemm> {
             ),
             SizedBox(width: 5),
             Icon(
-              widget.map[widget.index][0],
+              widget.map[widget.index]![0],
               color: Color(0xff00BBDC),
               size: 30,
             )
@@ -205,7 +205,7 @@ class _FilterItemmState extends State<FilterItemm> {
         value: check,
         onChanged: (value) {
           setState(() {
-            check = value;
+            check = value!;
           });
         },
       ),

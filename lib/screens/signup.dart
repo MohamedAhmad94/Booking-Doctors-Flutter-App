@@ -1,5 +1,5 @@
-import 'package:DoctorsBooking/screens/bottomnavbar/bottomnavbar.dart';
-import 'package:DoctorsBooking/screens/login.dart';
+import 'package:doctors_booking/screens/bottomnavbar/bottomnavbar.dart';
+import 'package:doctors_booking/screens/login.dart';
 
 import 'package:flutter/material.dart';
 
@@ -110,7 +110,7 @@ class _SignUpState extends State<SignUp> {
                         ),
                       ];
                     },
-                    onSelected: (value) {
+                    onSelected: (String value) {
                       setState(() {
                         countryCode = value;
                       });
@@ -153,7 +153,7 @@ class _SignUpState extends State<SignUp> {
                     initialDate: DateTime(1950),
                   );
                   setState(() {
-                    birthDate = _pickedDate;
+                    birthDate = _pickedDate!;
                   });
                 },
               ),
@@ -167,7 +167,7 @@ class _SignUpState extends State<SignUp> {
                     hoverColor: Colors.white,
                     onChanged: (value) {
                       setState(() {
-                        checked = value;
+                        checked = value!;
                       });
                     },
                   ),
@@ -182,10 +182,12 @@ class _SignUpState extends State<SignUp> {
               ),
               SizedBox(height: 5.0),
               Builder(builder: (BuildContext context) {
-                return FlatButton(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)),
-                  color: Color(0xff00BBDC),
+                return TextButton(
+                  style: TextButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    backgroundColor: Color(0xff00BBDC),
+                  ),
                   child: Text(
                     "Create account",
                     style: TextStyle(
@@ -194,14 +196,14 @@ class _SignUpState extends State<SignUp> {
                         fontWeight: FontWeight.bold),
                   ),
                   onPressed: () {
-                    if (!_formKey.currentState.validate()) {
-                      return Scaffold.of(context)
+                    if (!_formKey.currentState!.validate()) {
+                      ScaffoldMessenger.of(context)
                           .showSnackBar(missingData("All Fields are Required"));
                     } else if (checked == false) {
-                      return Scaffold.of(context).showSnackBar(
+                      ScaffoldMessenger.of(context).showSnackBar(
                           missingData("Accepting the Terms is required"));
                     } else {
-                      return Navigator.pushReplacement(context,
+                      Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (_) {
                         return BottomNavBar();
                       }));
@@ -210,11 +212,13 @@ class _SignUpState extends State<SignUp> {
                 );
               }),
               SizedBox(height: 5.0),
-              FlatButton(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    side: BorderSide(color: Colors.grey, width: 0.5)),
-                color: Colors.transparent,
+              TextButton(
+                style: TextButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      side: BorderSide(color: Colors.grey, width: 0.5)),
+                  backgroundColor: Colors.transparent,
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -247,7 +251,7 @@ class _SignUpState extends State<SignUp> {
                         height: 2.5),
                   ),
                   onTap: () {
-                    return Navigator.pushReplacement(context,
+                    Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (_) {
                       return Login();
                     }));
@@ -268,7 +272,7 @@ class _SignUpState extends State<SignUp> {
       child: TextFormField(
         key: key,
         validator: (value) {
-          if (value.isEmpty) {
+          if (value!.isEmpty) {
             return "This Field's Required";
           } else {
             return null;

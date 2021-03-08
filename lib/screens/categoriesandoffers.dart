@@ -1,4 +1,4 @@
-import 'package:DoctorsBooking/widgets/homepageitem.dart';
+import 'package:doctors_booking/widgets/homepageitem.dart';
 import 'package:flutter/material.dart';
 
 class CategoriesAndOffers extends StatefulWidget {

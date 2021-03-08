@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class Doctors extends StatefulWidget {
-  final String doctorName;
-  final String type;
-  final String date;
-  final String time;
-  final String image;
-  final String className;
+  final String? doctorName;
+  final String? type;
+  final String? date;
+  final String? time;
+  final String? image;
+  final String? className;
 
   Doctors(
       {this.doctorName,
@@ -38,7 +38,7 @@ class _DoctorsState extends State<Doctors> {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               image: DecorationImage(
-                image: NetworkImage(widget.image),
+                image: NetworkImage(widget.image!),
                 fit: BoxFit.fill,
               ),
             ),
@@ -47,7 +47,7 @@ class _DoctorsState extends State<Doctors> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                widget.doctorName,
+                widget.doctorName!,
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 20.0,
@@ -55,7 +55,7 @@ class _DoctorsState extends State<Doctors> {
                     height: 1.5),
               ),
               Text(
-                widget.type,
+                widget.type!,
                 style: TextStyle(
                     color: Color(0xff00BBDC),
                     fontSize: 16.0,
@@ -63,7 +63,7 @@ class _DoctorsState extends State<Doctors> {
                     height: 1.5),
               ),
               Text(
-                widget.date,
+                widget.date!,
                 style: TextStyle(
                     color: Colors.blue,
                     fontSize: 16.0,
@@ -71,7 +71,7 @@ class _DoctorsState extends State<Doctors> {
                     height: 1.5),
               ),
               Text(
-                widget.time,
+                widget.time!,
                 style: TextStyle(
                     color: Colors.blue,
                     fontSize: 16.0,

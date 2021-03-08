@@ -1,5 +1,5 @@
-import 'package:DoctorsBooking/widgets/customappbar.dart';
-import 'package:DoctorsBooking/widgets/doctordata.dart';
+import 'package:doctors_booking/widgets/customappbar.dart';
+import 'package:doctors_booking/widgets/doctordata.dart';
 import 'package:flutter/material.dart';
 
 class Appointments extends StatefulWidget {
@@ -9,7 +9,7 @@ class Appointments extends StatefulWidget {
 
 class _AppointmentsState extends State<Appointments>
     with TickerProviderStateMixin {
-  TabController tabController;
+  TabController? tabController;
 
   @override
   void initState() {
@@ -114,11 +114,11 @@ class _HistoryState extends State<History> {
         itemCount: previousAppointments.length,
         itemBuilder: (context, index) {
           return Doctors(
-            doctorName: previousAppointments[index][0],
-            type: previousAppointments[index][1],
-            date: previousAppointments[index][2],
-            time: previousAppointments[index][3],
-            image: previousAppointments[index][4],
+            doctorName: previousAppointments[index]![0],
+            type: previousAppointments[index]![1],
+            date: previousAppointments[index]![2],
+            time: previousAppointments[index]![3],
+            image: previousAppointments[index]![4],
             className: "History",
           );
         },
@@ -172,11 +172,11 @@ class _UpcomingState extends State<Upcoming> {
         itemCount: upcomingAppointments.length,
         itemBuilder: (context, index) {
           return Doctors(
-            doctorName: upcomingAppointments[index][0],
-            type: upcomingAppointments[index][1],
-            date: upcomingAppointments[index][2],
-            time: upcomingAppointments[index][3],
-            image: upcomingAppointments[index][4],
+            doctorName: upcomingAppointments[index]![0],
+            type: upcomingAppointments[index]![1],
+            date: upcomingAppointments[index]![2],
+            time: upcomingAppointments[index]![3],
+            image: upcomingAppointments[index]![4],
             className: "Upcoming",
           );
         },
