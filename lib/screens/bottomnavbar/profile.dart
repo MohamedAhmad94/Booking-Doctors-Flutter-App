@@ -1,6 +1,7 @@
 import 'package:doctors_booking/screens/login.dart';
 import 'package:doctors_booking/widgets/customappbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:image_picker/image_picker.dart';
 
 class Profile extends StatefulWidget {
@@ -10,6 +11,8 @@ class Profile extends StatefulWidget {
 
 class _ProfileState extends State<Profile> {
   PickedFile? image;
+  final picker = ImagePicker();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -146,7 +149,7 @@ class _ProfileState extends State<Profile> {
   }
 
   getImage(ImageSource source) async {
-    var _pickedFile = await ImagePicker().getImage(source: source);
+    var _pickedFile = await picker.getImage(source: source);
     setState(() {
       image = _pickedFile;
     });

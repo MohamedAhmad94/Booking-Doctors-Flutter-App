@@ -2,9 +2,11 @@ import 'package:doctors_booking/screens/bottomnavbar/appointments.dart';
 import 'package:doctors_booking/screens/categoriesandoffers.dart';
 import 'package:doctors_booking/screens/doctorProfile.dart';
 import 'package:doctors_booking/screens/result.dart';
+import 'package:doctors_booking/screens/searchmap.dart';
 import 'package:doctors_booking/widgets/customappbar.dart';
 import 'package:doctors_booking/widgets/homepageitem.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -62,14 +64,31 @@ class _HomePageState extends State<HomePage> {
           children: [
             CustomAppBar(
               200,
-              " Asslamu Alaikum,\n How are you feeling tody,\n Faizal?",
+              "Search Nearby Doctors",
               Container(
                 margin: EdgeInsets.all(10.0),
                 decoration: BoxDecoration(
                   color: Colors.white24,
                   borderRadius: BorderRadius.circular(20.0),
                 ),
-                child: searchField(),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.location_on,
+                    size: 25,
+                    color: Colors.white,
+                  ),
+                  title: Text("Search by Location",
+                      style: TextStyle(color: Colors.white, fontSize: 20.0)),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            fullscreenDialog: true,
+                            builder: (_) {
+                              return SearchMap();
+                            }));
+                  },
+                ),
               ),
               'Home',
             ),
@@ -106,12 +125,30 @@ class _HomePageState extends State<HomePage> {
               child: scrollSection(offers),
             ),
             headLine("Suggested Doctors"),
-            suggestedDoctors("Dr. Mohamed Ahmed", "assets/images/doctor2.png",
-                "General", " 4.7   25 Reviews"),
-            suggestedDoctors("Dr. Ahmed Samy", "assets/images/doctor2.png",
-                "Dental", " 4.9   35 Reviews"),
-            suggestedDoctors("Dr. Ali Hassan", "assets/images/doctor2.png",
-                "Cardio", " 4.8   45 Reviews"),
+            suggestedDoctors(
+                "Dr. Ahmed Saber",
+                "https://pulse.doctor/media_/images/photos/doctor4.jpg",
+                "Dental",
+                4.0,
+                "165 Reviews"),
+            suggestedDoctors(
+                "Dr. Ahmed Ali",
+                "https://www.pinnaclecare.com/wp-content/uploads/2017/12/bigstock-African-young-doctor-portrait-28825394-300x425.jpg",
+                "Cardio",
+                4.3,
+                "120 Reviews"),
+            suggestedDoctors(
+                "Dr. Adel Hamed",
+                "https://s3-eu-west-1.amazonaws.com/intercare-web-public/wysiwyg-uploads%2F1569586526901-doctor.jpg",
+                "General",
+                4.8,
+                "120 Reviews"),
+            suggestedDoctors(
+                "Dr. Samia Omar",
+                "https://image.freepik.com/free-photo/beautiful-young-female-doctor-looking-camera-office_1301-7807.jpg",
+                "Therapy",
+                4.6,
+                "150 Reviews"),
             headLine("My Appointments"),
           ],
         ),
@@ -152,7 +189,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   suggestedDoctors(String doctorName, String doctorImage, String doctorCategory,
-      String doctorRating) {
+      double doctorRating, String reviews) {
     return Container(
       margin: EdgeInsets.all(10),
       decoration: BoxDecoration(
@@ -161,9 +198,9 @@ class _HomePageState extends State<HomePage> {
       ),
       child: ListTile(
         leading: CircleAvatar(
-          minRadius: 25.0,
-          maxRadius: 25.0,
-          backgroundImage: AssetImage(doctorImage),
+          minRadius: 40.0,
+          maxRadius: 40.0,
+          backgroundImage: NetworkImage(doctorImage),
         ),
         title: Text(
           doctorName,
@@ -183,9 +220,27 @@ class _HomePageState extends State<HomePage> {
             ),
             Row(
               children: [
-                Icon(Icons.star, color: Colors.amber, size: 15.0),
+                RatingBar(
+                    minRating: 1.0,
+                    maxRating: 5.0,
+                    initialRating: doctorRating,
+                    direction: Axis.horizontal,
+                    itemCount: 5,
+                    itemSize: 15,
+                    allowHalfRating: true,
+                    glowColor: Colors.yellow,
+                    unratedColor: Colors.grey,
+                    ratingWidget: RatingWidget(
+                        full: Icon(Icons.star, color: Colors.amber),
+                        half: Icon(Icons.star_half, color: Colors.amber),
+                        empty: Icon(Icons.star_border, color: Colors.amber)),
+                    onRatingUpdate: (doctorRating2) {
+                      setState(() {
+                        doctorRating = doctorRating2;
+                      });
+                    }),
                 Text(
-                  doctorRating,
+                  reviews,
                   style: TextStyle(
                       color: Colors.amber,
                       fontSize: 15.0,

@@ -1,3 +1,4 @@
+import 'package:doctors_booking/screens/doctorProfile.dart';
 import 'package:flutter/material.dart';
 
 class Doctors extends StatefulWidget {
@@ -78,8 +79,30 @@ class _DoctorsState extends State<Doctors> {
                     fontWeight: FontWeight.bold,
                     height: 1.5),
               ),
+              TextButton(
+                style: TextButton.styleFrom(
+                  elevation: 1.0,
+                  shadowColor: Colors.black,
+                  backgroundColor: Colors.transparent,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0)),
+                  side: BorderSide(color: Colors.black, width: 1.0),
+                ),
+                child: Text(
+                  "View Profile",
+                  style: TextStyle(
+                      color: Colors.blue,
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.bold),
+                ),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (_) {
+                    return DoctorProfile();
+                  }));
+                },
+              ),
             ],
-          )
+          ),
         ],
       ),
     );

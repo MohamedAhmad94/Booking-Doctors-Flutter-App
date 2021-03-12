@@ -81,8 +81,8 @@ class _ResultState extends State<Result> {
                   return SearchResult(
                     doctorName: "Dr. Ahmed Saber",
                     type: "Dental",
-                    rating: 4.5,
-                    reviews: 150,
+                    rating: 4.0,
+                    reviews: 165,
                     location: "Cairo - Egypt",
                     fees: 200,
                     currency: "EGP",

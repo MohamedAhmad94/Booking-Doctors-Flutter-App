@@ -1,6 +1,7 @@
 import 'package:doctors_booking/widgets/favicon.dart';
 import 'package:doctors_booking/widgets/reviewitem.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class DoctorProfile extends StatefulWidget {
   @override
@@ -97,24 +98,23 @@ class _DoctorProfileState extends State<DoctorProfile> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     ListTile(
-                      leading: Text(
-                        "4.0",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 35,
-                            fontWeight: FontWeight.bold,
-                            height: 1),
-                      ),
-                      title: Text(
-                        "Overall Rating",
-                        style: TextStyle(
-                            color: Colors.black54,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            height: 1.5),
-                      ),
-                      // subtitle: ratingBar(4.0)
-                    ),
+                        leading: Text(
+                          "4.0",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 35,
+                              fontWeight: FontWeight.bold,
+                              height: 1),
+                        ),
+                        title: Text(
+                          "Overall Rating",
+                          style: TextStyle(
+                              color: Colors.black54,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              height: 1.5),
+                        ),
+                        subtitle: ratingBar(4.0)),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -152,7 +152,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                             color: Colors.black54,
                             fontSize: 15.0,
                             fontWeight: FontWeight.normal)),
-                    // ratingBar(4.7),
+                    ratingBar(4.7),
                     Divider(
                       color: Colors.black12,
                       thickness: 3,
@@ -163,7 +163,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                             color: Colors.black54,
                             fontSize: 15.0,
                             fontWeight: FontWeight.normal)),
-                    // ratingBar(2.5),
+                    ratingBar(2.5),
                   ],
                 ),
               ),
@@ -217,24 +217,28 @@ class _DoctorProfileState extends State<DoctorProfile> {
     );
   }
 
-  // ratingBar(double currentRating) {
-  //   return RatingBar(
-  //     onRatingUpdate: null,
-  //     direction: Axis.horizontal,
-  //     initialRating: currentRating,
-  //     itemCount: 5,
-  //     itemSize: 15,
-  //     minRating: 1.0,
-  //     maxRating: 5.0,
-  //     ratingWidget: RatingWidget(
-  //       full: Icon(Icons.star, color: Colors.yellow),
-  //       half: Icon(Icons.star_half, color: Colors.yellow),
-  //       empty: Icon(Icons.star_border, color: Colors.yellow),
-  //     ),
-  //     glowColor: Colors.yellow,
-  //     unratedColor: Colors.grey,
-  //   );
-  // }
+  ratingBar(double currentRating) {
+    return RatingBar(
+      onRatingUpdate: (currentRating2) {
+        setState(() {
+          currentRating2 = currentRating;
+        });
+      },
+      direction: Axis.horizontal,
+      initialRating: currentRating,
+      itemCount: 5,
+      itemSize: 15,
+      minRating: 1.0,
+      maxRating: 5.0,
+      ratingWidget: RatingWidget(
+        full: Icon(Icons.star, color: Colors.yellow),
+        half: Icon(Icons.star_half, color: Colors.yellow),
+        empty: Icon(Icons.star_border, color: Colors.yellow),
+      ),
+      glowColor: Colors.yellow,
+      unratedColor: Colors.grey,
+    );
+  }
 
   doctorCard(double height, Widget widget) {
     return Card(
@@ -320,7 +324,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Dr. Mohamed Ahmed",
+                          Text("Dr. Ahmed Saber",
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20,
