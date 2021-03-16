@@ -26,6 +26,8 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
+  // final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+
   // Map<int, List> categories = {
   //   0: [
   //     'Dentist',
