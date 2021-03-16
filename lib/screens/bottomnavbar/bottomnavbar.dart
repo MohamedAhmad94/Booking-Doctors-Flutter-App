@@ -2,6 +2,8 @@ import 'package:doctors_booking/screens/bottomnavbar/appointments.dart';
 import 'package:doctors_booking/screens/bottomnavbar/homePage.dart';
 import 'package:doctors_booking/screens/bottomnavbar/profile.dart';
 import 'package:flutter/material.dart';
+import 'package:scoped_model/scoped_model.dart';
+import 'package:doctors_booking/models/categories/categoryController.dart';
 
 class BottomNavBar extends StatefulWidget {
   @override
@@ -10,7 +12,6 @@ class BottomNavBar extends StatefulWidget {
 
 class _BottomNavBarState extends State<BottomNavBar> {
   int current = 0;
-  List screens = [HomePage(), Appointments(), Profile()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +39,16 @@ class _BottomNavBarState extends State<BottomNavBar> {
           });
         },
       ),
-      body: screens[current],
+      body: ScopedModelDescendant(
+          builder: (context, child, CategoryController category) {
+        if (current == 0) {
+          return HomePage(category);
+        } else if (current == 1) {
+          return Appointments();
+        } else {
+          return Profile();
+        }
+      }),
     );
   }
 }

@@ -1,56 +1,49 @@
 import 'package:doctors_booking/screens/bottomnavbar/appointments.dart';
-import 'package:doctors_booking/screens/categoriesandoffers.dart';
+import 'package:doctors_booking/screens/categories.dart';
 import 'package:doctors_booking/screens/doctorProfile.dart';
 import 'package:doctors_booking/screens/result.dart';
 import 'package:doctors_booking/screens/searchmap.dart';
 import 'package:doctors_booking/widgets/customappbar.dart';
 import 'package:doctors_booking/widgets/homepageitem.dart';
+import 'package:doctors_booking/widgets/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:scoped_model/scoped_model.dart';
+import 'package:doctors_booking/models/categories/categoryController.dart';
 
 class HomePage extends StatefulWidget {
+  final CategoryController category;
+
+  HomePage(this.category);
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  Map<int, List> categories = {
-    0: [
-      'Dentist',
-      'https://image.freepik.com/free-vector/children-s-dentist-patient_42515-334.jpg'
-    ],
-    1: [
-      'General',
-      'https://cdn.pixabay.com/photo/2020/12/09/16/41/stethoscope-5817919_1280.png'
-    ],
-    2: [
-      'Cardiologist',
-      'https://www.shareicon.net/data/512x512/2017/03/27/881663_medical_512x512.png'
-    ],
-    3: [
-      'Pediatrician',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJQtnoIW8DcWTBL-C9vMA3CQOMUxQA1GEbtA&usqp=CAU'
-    ],
-  };
+  @override
+  void initState() {
+    widget.category.getCategories();
+    super.initState();
+  }
 
-  Map<int, List> offers = {
-    0: [
-      '25% Off',
-      'https://img.freepik.com/free-vector/discount-concept-illustration_114360-1852.jpg?size=626&ext=jpg'
-    ],
-    1: [
-      '50% Off',
-      'https://image.freepik.com/free-vector/discount-loyalty-card-loyalty-program-customer-service-rewards-card-points-concept-isolated-concept-illustration-with-tiny-people-floral-elements-hero-image-website_126608-770.jpg'
-    ],
-    2: [
-      'up to 75%',
-      'https://image.freepik.com/free-vector/people-celebrating-with-gift-card-voucher-isolated-flat-vector-illustration-cartoon-happy-customers-winning-abstract-prize-certificate-discount-coupon-creative-strategy-camp-money_74855-8500.jpg'
-    ],
-    3: [
-      '10% off',
-      'https://image.freepik.com/free-vector/black-friday-shop-people-buying-super-discount-shop-online-service-promo-purchase-marketing-illustration_101179-927.jpg'
-    ],
-  };
+  // Map<int, List> categories = {
+  //   0: [
+  //     'Dentist',
+  //     'https://image.freepik.com/free-vector/children-s-dentist-patient_42515-334.jpg'
+  //   ],
+  //   1: [
+  //     'General',
+  //     'https://cdn.pixabay.com/photo/2020/12/09/16/41/stethoscope-5817919_1280.png'
+  //   ],
+  //   2: [
+  //     'Cardiologist',
+  //     'https://www.shareicon.net/data/512x512/2017/03/27/881663_medical_512x512.png'
+  //   ],
+  //   3: [
+  //     'Pediatrician',
+  //     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJQtnoIW8DcWTBL-C9vMA3CQOMUxQA1GEbtA&usqp=CAU'
+  //   ],
+  // };
 
   TextEditingController searchController = TextEditingController();
 
@@ -59,99 +52,99 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.grey[50],
       body: Container(
-        child: ListView(
-          scrollDirection: Axis.vertical,
-          children: [
-            CustomAppBar(
-              200,
-              "Search Nearby Doctors",
-              Container(
-                margin: EdgeInsets.all(10.0),
-                decoration: BoxDecoration(
-                  color: Colors.white24,
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-                child: ListTile(
-                  leading: Icon(
-                    Icons.location_on,
-                    size: 25,
-                    color: Colors.white,
+        child: ScopedModelDescendant(
+            builder: (context, child, CategoryController category) {
+          return ListView(
+            scrollDirection: Axis.vertical,
+            children: [
+              CustomAppBar(
+                200,
+                "Search Nearby Doctors",
+                Container(
+                  margin: EdgeInsets.all(10.0),
+                  decoration: BoxDecoration(
+                    color: Colors.white24,
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
-                  title: Text("Search by Location",
-                      style: TextStyle(color: Colors.white, fontSize: 20.0)),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            fullscreenDialog: true,
-                            builder: (_) {
-                              return SearchMap();
-                            }));
-                  },
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.location_on,
+                      size: 25,
+                      color: Colors.white,
+                    ),
+                    title: Text("Search by Location",
+                        style: TextStyle(color: Colors.white, fontSize: 20.0)),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              fullscreenDialog: true,
+                              builder: (_) {
+                                return SearchMap();
+                              }));
+                    },
+                  ),
+                ),
+                'Home',
+              ),
+              Container(
+                height: 150.0,
+                margin: EdgeInsets.all(15.0),
+                decoration: BoxDecoration(
+                  color: Color(0xffedf7f8),
+                  borderRadius: BorderRadius.circular(20.0),
+                  image: DecorationImage(
+                    image: NetworkImage(
+                        'https://i.pinimg.com/736x/9f/32/20/9f3220f4535dd9cd9743b995fdfdeaa1.jpg'),
+                    alignment: Alignment.centerRight,
+                    // fit: BoxFit.fill,
+                  ),
+                ),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  " Schedule your\n Next Appoinmtment\n Today",
+                  style: TextStyle(
+                      color: Color(0xff03CBC8),
+                      fontSize: 17.0,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
-              'Home',
-            ),
-            Container(
-              height: 150.0,
-              margin: EdgeInsets.all(15.0),
-              decoration: BoxDecoration(
-                color: Color(0xffedf7f8),
-                borderRadius: BorderRadius.circular(20.0),
-                image: DecorationImage(
-                  image: NetworkImage(
-                      'https://i.pinimg.com/736x/9f/32/20/9f3220f4535dd9cd9743b995fdfdeaa1.jpg'),
-                  alignment: Alignment.centerRight,
-                  // fit: BoxFit.fill,
-                ),
+              headLine("Categories"),
+              Container(
+                height: MediaQuery.of(context).size.height / 3,
+                child: category.isCategoryLoading == true
+                    ? Center(child: Loading())
+                    : scrollSection(category),
               ),
-              alignment: Alignment.centerLeft,
-              child: Text(
-                " Schedule your\n Next Appoinmtment\n Today",
-                style: TextStyle(
-                    color: Color(0xff03CBC8),
-                    fontSize: 17.0,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-            headLine("Categories"),
-            Container(
-              height: MediaQuery.of(context).size.height / 3,
-              child: scrollSection(categories),
-            ),
-            headLine('Today Offers'),
-            Container(
-              height: MediaQuery.of(context).size.height / 3,
-              child: scrollSection(offers),
-            ),
-            headLine("Suggested Doctors"),
-            suggestedDoctors(
-                "Dr. Ahmed Saber",
-                "https://pulse.doctor/media_/images/photos/doctor4.jpg",
-                "Dental",
-                4.0,
-                "165 Reviews"),
-            suggestedDoctors(
-                "Dr. Ahmed Ali",
-                "https://www.pinnaclecare.com/wp-content/uploads/2017/12/bigstock-African-young-doctor-portrait-28825394-300x425.jpg",
-                "Cardio",
-                4.3,
-                "120 Reviews"),
-            suggestedDoctors(
-                "Dr. Adel Hamed",
-                "https://s3-eu-west-1.amazonaws.com/intercare-web-public/wysiwyg-uploads%2F1569586526901-doctor.jpg",
-                "General",
-                4.8,
-                "120 Reviews"),
-            suggestedDoctors(
-                "Dr. Samia Omar",
-                "https://image.freepik.com/free-photo/beautiful-young-female-doctor-looking-camera-office_1301-7807.jpg",
-                "Therapy",
-                4.6,
-                "150 Reviews"),
-            headLine("My Appointments"),
-          ],
-        ),
+              headLine("Suggested Doctors"),
+              suggestedDoctors(
+                  "Dr. Ahmed Saber",
+                  "https://pulse.doctor/media_/images/photos/doctor4.jpg",
+                  "Dental",
+                  4.1,
+                  "165 Reviews"),
+              suggestedDoctors(
+                  "Dr. Ahmed Ali",
+                  "https://www.pinnaclecare.com/wp-content/uploads/2017/12/bigstock-African-young-doctor-portrait-28825394-300x425.jpg",
+                  "Cardio",
+                  4.3,
+                  "120 Reviews"),
+              suggestedDoctors(
+                  "Dr. Adel Hamed",
+                  "https://s3-eu-west-1.amazonaws.com/intercare-web-public/wysiwyg-uploads%2F1569586526901-doctor.jpg",
+                  "General",
+                  4.8,
+                  "130 Reviews"),
+              suggestedDoctors(
+                  "Dr. Samia Omar",
+                  "https://image.freepik.com/free-photo/beautiful-young-female-doctor-looking-camera-office_1301-7807.jpg",
+                  "Therapy",
+                  4.6,
+                  "150 Reviews"),
+              headLine("My Appointments"),
+            ],
+          );
+        }),
       ),
     );
   }
@@ -171,19 +164,20 @@ class _HomePageState extends State<HomePage> {
           } else if (title == "My Appointments") {
             return Appointments();
           } else {
-            return CategoriesAndOffers(title);
+            return Categories();
           }
         }));
       },
     );
   }
 
-  scrollSection(Map<int, List> map) {
+  scrollSection(CategoryController category) {
     return ListView.builder(
       scrollDirection: Axis.horizontal,
-      itemCount: categories.length,
+      itemCount: category.allCategories.length,
       itemBuilder: (context, index) {
-        return HomePageItem(map, index);
+        return HomePageItem(category.allCategories[index].categoryName,
+            category.allCategories[index].categoryImage, index);
       },
     );
   }

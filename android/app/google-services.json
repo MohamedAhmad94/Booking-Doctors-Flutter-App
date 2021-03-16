@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "422063190396",
+    "project_id": "doctors-booking-307313",
+    "storage_bucket": "doctors-booking-307313.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422063190396:android:a6047c56e91fc52cff74f9",
+        "android_client_info": {
+          "package_name": "com.example.DoctorsBooking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "422063190396-r31hg668ir3ed1ko08pllk36le215qsm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.DoctorsBooking",
+            "certificate_hash": "a73156e8cc83cd286ccf325efa7e04e0d25ec163"
+          }
+        },
+        {
+          "client_id": "422063190396-0u6prd1r6jhvppmnva0et17krvv39b0f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfisyN1IRZB6AR3kR4f6EaqRwL1B44cxE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "422063190396-0u6prd1r6jhvppmnva0et17krvv39b0f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

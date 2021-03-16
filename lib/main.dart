@@ -1,4 +1,6 @@
+import 'package:doctors_booking/models/categories/categoryController.dart';
 import 'package:doctors_booking/screens/login.dart';
+import 'package:scoped_model/scoped_model.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -6,9 +8,12 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Login(),
+    return ScopedModel(
+      model: CategoryController(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Login(),
+      ),
     );
   }
 }

@@ -1,0 +1,562 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:1:1-52:12
+INJECTED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:1:1-52:12
+INJECTED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:1:1-52:12
+INJECTED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:1:1-52:12
+MERGED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:1:1-52:12
+MERGED from [:firebase_storage] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
+MERGED from [:google_maps_flutter] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\google_maps_flutter\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:image_picker] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-22:12
+MERGED from [:flutter_plugin_android_lifecycle] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:geocoding] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\geocoding\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:geolocator] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\geolocator\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:cloud_firestore] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
+MERGED from [:firebase_database] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
+MERGED from [:shared_preferences] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\shared_preferences\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:firebase_core] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
+MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\45098f1315e14f341f88fe1c6e02f648\multidex-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-analytics:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b31f419ed1bddb3bebdea48541e2ff88\firebase-analytics-18.0.2\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-storage:19.2.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\83427d6c7cea12c20dc188f2d495e58a\firebase-storage-19.2.1\AndroidManifest.xml:15:1-39:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\aee842d19a1f17175e4dfc330e518a24\exifinterface-1.3.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-firestore:22.1.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\33a42d189be3bbac0862ca3876b5f43c\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:2:1-26:12
+MERGED from [com.google.firebase:firebase-database:19.7.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\09c199edfaf88812cf66b0152132279f\firebase-database-19.7.0\AndroidManifest.xml:15:1-38:12
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\6c56d343dadbd5de2e9c955fa8e4e1c1\play-services-maps-17.0.0\AndroidManifest.xml:17:1-38:12
+MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b16942fa7a97917af413615b3a813965\play-services-location-17.0.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-database-collection:17.0.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\204985af97685d6de98236b6a83a3c61\firebase-database-collection-17.0.1\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\30a8c856d8fe9a20d62f614b9db1a8ff\play-services-base-17.0.0\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\2a1d642a571731beebc925a7dbea79fd\play-services-measurement-api-18.0.2\AndroidManifest.xml:17:1-36:12
+MERGED from [com.google.firebase:firebase-auth-interop:19.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\aabd1d36b224091d86d9a294565af90d\jetified-firebase-auth-interop-19.0.2\AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.firebase:firebase-installations:16.3.5] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\e621b86a65d937145bd19c8efcb92faf\firebase-installations-16.3.5\AndroidManifest.xml:2:1-24:12
+MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b4e9a26ecc1e88529feb3b99b010e011\jetified-firebase-common-19.5.0\AndroidManifest.xml:15:1-49:12
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\f524bccf72d0b3c7e7f232505d3b421f\play-services-places-placereport-17.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-installations-interop:16.0.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\a31ad0f7ef35633858a2317358ecdee9\firebase-installations-interop-16.0.1\AndroidManifest.xml:15:1-23:12
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\64b898e8183dd20760b3723b25be42f7\play-services-tasks-17.0.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:17:1-46:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\01a1cb50d655c6e024aa1b0b8a8ac66f\play-services-measurement-sdk-18.0.2\AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\178d21e55dcd9e2722f4454aab156514\play-services-measurement-impl-18.0.2\AndroidManifest.xml:17:1-31:12
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\f65d8b8b50b08bfcb0e00fdece75e0a2\play-services-ads-identifier-17.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\51a0bba0ccdfd068b33aa354c7033d9b\play-services-measurement-sdk-api-18.0.2\AndroidManifest.xml:17:1-27:12
+MERGED from [com.google.android.gms:play-services-measurement-base:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\671452687ffce4352b7c0220e1d485a2\play-services-measurement-base-18.0.2\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\5cb901d6e77858a7cd06a37ac2f19a8e\play-services-stats-17.0.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\0c449a9f5cd296cd55a6d250b0236db7\firebase-measurement-connector-18.0.0\AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\8608c01ae43f3b1b32cd1f523fb35047\jetified-play-services-basement-17.0.0\AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\7cb4a46ee535916a64932d3e4f7a44eb\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\6b0f1eb76196a5f944e97829f5340894\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\97596a5bcc67112c7a90e12c9a6abe33\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\2e8ff02a4ddd9e6f12bed4a15660813b\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\3f7551d68d789e41bfcd82def576a98f\activity-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\faf3e980b959b26518f230543bf12bbf\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.1.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\3e26ef26d15f163a2f1a31a2130a0254\core-1.1.0\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\e735a9c2baf1c0f4c5cf4832deb98cb1\lifecycle-runtime-2.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\a1a089f17ea2f6046497b236f7553bf2\savedstate-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\794b83c518e2b750127caae5468e6b3d\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\d99ea84fa4adf2984fe4e585a3222652\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-components:16.1.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\7a5c4bfdf5d4590e8c755112e8ea132c\jetified-firebase-components-16.1.0\AndroidManifest.xml:15:1-23:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\c41cc3207e1cdfa82e55f02c355616c2\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\5ffa2f7cdad188079589f742d0e5215a\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\29c9236d8556e66c150b1cba2401ead9\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b19955ce5eee2f53f5d89f62699be6dc\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\2eb31a6d28642f338eb229439c98faec\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\658d29ebd3d5fbfe571528f50a047e26\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:protolite-well-known-types:17.1.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\8d507950016cad98873b4383e6c1beaf\protolite-well-known-types-17.1.1\AndroidManifest.xml:2:1-11:12
+MERGED from [io.grpc:grpc-android:1.28.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\c40b3a1ade295bee345fced2eee0a115\grpc-android-1.28.0\AndroidManifest.xml:2:1-13:12
+INJECTED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+INJECTED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+INJECTED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+	package
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:2:5-41
+		INJECTED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\debug\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:1:1-52:12
+		INJECTED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\debug\AndroidManifest.xml
+	android:versionCode
+		INJECTED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:1:1-52:12
+		INJECTED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\debug\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:1:11-69
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:8:10-86
+	android:name
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:8:27-83
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:9:10-84
+	android:name
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:9:27-81
+application
+ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:10:5-51:19
+MERGED from [:firebase_storage] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_storage] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
+MERGED from [:image_picker] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-20:19
+MERGED from [:image_picker] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-20:19
+MERGED from [:cloud_firestore] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
+MERGED from [:cloud_firestore] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_database] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_database] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_core] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_core] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
+MERGED from [com.google.firebase:firebase-analytics:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b31f419ed1bddb3bebdea48541e2ff88\firebase-analytics-18.0.2\AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-analytics:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b31f419ed1bddb3bebdea48541e2ff88\firebase-analytics-18.0.2\AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-storage:19.2.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\83427d6c7cea12c20dc188f2d495e58a\firebase-storage-19.2.1\AndroidManifest.xml:29:5-37:19
+MERGED from [com.google.firebase:firebase-storage:19.2.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\83427d6c7cea12c20dc188f2d495e58a\firebase-storage-19.2.1\AndroidManifest.xml:29:5-37:19
+MERGED from [com.google.firebase:firebase-firestore:22.1.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\33a42d189be3bbac0862ca3876b5f43c\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:16:5-24:19
+MERGED from [com.google.firebase:firebase-firestore:22.1.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\33a42d189be3bbac0862ca3876b5f43c\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:16:5-24:19
+MERGED from [com.google.firebase:firebase-database:19.7.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\09c199edfaf88812cf66b0152132279f\firebase-database-19.7.0\AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.firebase:firebase-database:19.7.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\09c199edfaf88812cf66b0152132279f\firebase-database-19.7.0\AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\6c56d343dadbd5de2e9c955fa8e4e1c1\play-services-maps-17.0.0\AndroidManifest.xml:30:5-36:19
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\6c56d343dadbd5de2e9c955fa8e4e1c1\play-services-maps-17.0.0\AndroidManifest.xml:30:5-36:19
+MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b16942fa7a97917af413615b3a813965\play-services-location-17.0.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b16942fa7a97917af413615b3a813965\play-services-location-17.0.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\30a8c856d8fe9a20d62f614b9db1a8ff\play-services-base-17.0.0\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\30a8c856d8fe9a20d62f614b9db1a8ff\play-services-base-17.0.0\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\2a1d642a571731beebc925a7dbea79fd\play-services-measurement-api-18.0.2\AndroidManifest.xml:26:5-34:19
+MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\2a1d642a571731beebc925a7dbea79fd\play-services-measurement-api-18.0.2\AndroidManifest.xml:26:5-34:19
+MERGED from [com.google.firebase:firebase-auth-interop:19.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\aabd1d36b224091d86d9a294565af90d\jetified-firebase-auth-interop-19.0.2\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-auth-interop:19.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\aabd1d36b224091d86d9a294565af90d\jetified-firebase-auth-interop-19.0.2\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-installations:16.3.5] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\e621b86a65d937145bd19c8efcb92faf\firebase-installations-16.3.5\AndroidManifest.xml:14:5-22:19
+MERGED from [com.google.firebase:firebase-installations:16.3.5] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\e621b86a65d937145bd19c8efcb92faf\firebase-installations-16.3.5\AndroidManifest.xml:14:5-22:19
+MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b4e9a26ecc1e88529feb3b99b010e011\jetified-firebase-common-19.5.0\AndroidManifest.xml:25:5-47:19
+MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b4e9a26ecc1e88529feb3b99b010e011\jetified-firebase-common-19.5.0\AndroidManifest.xml:25:5-47:19
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\f524bccf72d0b3c7e7f232505d3b421f\play-services-places-placereport-17.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\f524bccf72d0b3c7e7f232505d3b421f\play-services-places-placereport-17.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\64b898e8183dd20760b3723b25be42f7\play-services-tasks-17.0.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\64b898e8183dd20760b3723b25be42f7\play-services-tasks-17.0.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:28:5-44:19
+MERGED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:28:5-44:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\01a1cb50d655c6e024aa1b0b8a8ac66f\play-services-measurement-sdk-18.0.2\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\01a1cb50d655c6e024aa1b0b8a8ac66f\play-services-measurement-sdk-18.0.2\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\178d21e55dcd9e2722f4454aab156514\play-services-measurement-impl-18.0.2\AndroidManifest.xml:28:5-29:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\178d21e55dcd9e2722f4454aab156514\play-services-measurement-impl-18.0.2\AndroidManifest.xml:28:5-29:19
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\f65d8b8b50b08bfcb0e00fdece75e0a2\play-services-ads-identifier-17.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\f65d8b8b50b08bfcb0e00fdece75e0a2\play-services-ads-identifier-17.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\671452687ffce4352b7c0220e1d485a2\play-services-measurement-base-18.0.2\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\671452687ffce4352b7c0220e1d485a2\play-services-measurement-base-18.0.2\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\5cb901d6e77858a7cd06a37ac2f19a8e\play-services-stats-17.0.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\5cb901d6e77858a7cd06a37ac2f19a8e\play-services-stats-17.0.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\0c449a9f5cd296cd55a6d250b0236db7\firebase-measurement-connector-18.0.0\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\0c449a9f5cd296cd55a6d250b0236db7\firebase-measurement-connector-18.0.0\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\8608c01ae43f3b1b32cd1f523fb35047\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\8608c01ae43f3b1b32cd1f523fb35047\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.core:core:1.1.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\3e26ef26d15f163a2f1a31a2130a0254\core-1.1.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\3e26ef26d15f163a2f1a31a2130a0254\core-1.1.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\5ffa2f7cdad188079589f742d0e5215a\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\5ffa2f7cdad188079589f742d0e5215a\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\3e26ef26d15f163a2f1a31a2130a0254\core-1.1.0\AndroidManifest.xml:24:18-86
+	android:label
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:12:9-39
+	android:icon
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:13:9-43
+	android:name
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:11:9-57
+meta-data#com.google.android.geo.API_KEY
+ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:15:9-16:73
+	android:value
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:16:16-71
+	android:name
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:15:20-65
+activity#com.example.DoctorsBooking.MainActivity
+ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:17:9-45:20
+	android:launchMode
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:19:13-43
+	android:hardwareAccelerated
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:22:13-47
+	android:windowSoftInputMode
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:23:13-55
+	android:configChanges
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:21:13-163
+	android:theme
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:20:13-47
+	android:name
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:18:13-41
+meta-data#io.flutter.embedding.android.NormalTheme
+ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:28:13-31:17
+	android:resource
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:30:15-52
+	android:name
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:29:15-70
+meta-data#io.flutter.embedding.android.SplashScreenDrawable
+ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:37:13-40:17
+	android:resource
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:39:15-61
+	android:name
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:38:15-79
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:41:13-44:29
+action#android.intent.action.MAIN
+ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:42:17-68
+	android:name
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:42:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:43:17-76
+	android:name
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:43:27-74
+meta-data#flutterEmbedding
+ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:48:9-50:33
+	android:value
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:50:13-30
+	android:name
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml:49:13-44
+uses-sdk
+INJECTED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml
+INJECTED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml
+MERGED from [:firebase_storage] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:firebase_storage] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:google_maps_flutter] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\google_maps_flutter\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:google_maps_flutter] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\google_maps_flutter\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:image_picker] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:image_picker] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:geocoding] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\geocoding\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:geocoding] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\geocoding\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:geolocator] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\geolocator\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:geolocator] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\geolocator\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:cloud_firestore] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:cloud_firestore] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:firebase_database] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:firebase_database] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\shared_preferences\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\shared_preferences\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:firebase_core] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:firebase_core] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\45098f1315e14f341f88fe1c6e02f648\multidex-2.0.0\AndroidManifest.xml:20:5-43
+MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\45098f1315e14f341f88fe1c6e02f648\multidex-2.0.0\AndroidManifest.xml:20:5-43
+MERGED from [com.google.firebase:firebase-analytics:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b31f419ed1bddb3bebdea48541e2ff88\firebase-analytics-18.0.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-analytics:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b31f419ed1bddb3bebdea48541e2ff88\firebase-analytics-18.0.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-storage:19.2.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\83427d6c7cea12c20dc188f2d495e58a\firebase-storage-19.2.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-storage:19.2.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\83427d6c7cea12c20dc188f2d495e58a\firebase-storage-19.2.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\aee842d19a1f17175e4dfc330e518a24\exifinterface-1.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\aee842d19a1f17175e4dfc330e518a24\exifinterface-1.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-firestore:22.1.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\33a42d189be3bbac0862ca3876b5f43c\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:firebase-firestore:22.1.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\33a42d189be3bbac0862ca3876b5f43c\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:firebase-database:19.7.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\09c199edfaf88812cf66b0152132279f\firebase-database-19.7.0\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-database:19.7.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\09c199edfaf88812cf66b0152132279f\firebase-database-19.7.0\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\6c56d343dadbd5de2e9c955fa8e4e1c1\play-services-maps-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\6c56d343dadbd5de2e9c955fa8e4e1c1\play-services-maps-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b16942fa7a97917af413615b3a813965\play-services-location-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b16942fa7a97917af413615b3a813965\play-services-location-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-database-collection:17.0.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\204985af97685d6de98236b6a83a3c61\firebase-database-collection-17.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-database-collection:17.0.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\204985af97685d6de98236b6a83a3c61\firebase-database-collection-17.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\30a8c856d8fe9a20d62f614b9db1a8ff\play-services-base-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\30a8c856d8fe9a20d62f614b9db1a8ff\play-services-base-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\2a1d642a571731beebc925a7dbea79fd\play-services-measurement-api-18.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\2a1d642a571731beebc925a7dbea79fd\play-services-measurement-api-18.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:19.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\aabd1d36b224091d86d9a294565af90d\jetified-firebase-auth-interop-19.0.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:19.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\aabd1d36b224091d86d9a294565af90d\jetified-firebase-auth-interop-19.0.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-installations:16.3.5] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\e621b86a65d937145bd19c8efcb92faf\firebase-installations-16.3.5\AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-installations:16.3.5] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\e621b86a65d937145bd19c8efcb92faf\firebase-installations-16.3.5\AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b4e9a26ecc1e88529feb3b99b010e011\jetified-firebase-common-19.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b4e9a26ecc1e88529feb3b99b010e011\jetified-firebase-common-19.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\f524bccf72d0b3c7e7f232505d3b421f\play-services-places-placereport-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\f524bccf72d0b3c7e7f232505d3b421f\play-services-places-placereport-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-installations-interop:16.0.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\a31ad0f7ef35633858a2317358ecdee9\firebase-installations-interop-16.0.1\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-installations-interop:16.0.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\a31ad0f7ef35633858a2317358ecdee9\firebase-installations-interop-16.0.1\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\64b898e8183dd20760b3723b25be42f7\play-services-tasks-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\64b898e8183dd20760b3723b25be42f7\play-services-tasks-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\01a1cb50d655c6e024aa1b0b8a8ac66f\play-services-measurement-sdk-18.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\01a1cb50d655c6e024aa1b0b8a8ac66f\play-services-measurement-sdk-18.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\178d21e55dcd9e2722f4454aab156514\play-services-measurement-impl-18.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\178d21e55dcd9e2722f4454aab156514\play-services-measurement-impl-18.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\f65d8b8b50b08bfcb0e00fdece75e0a2\play-services-ads-identifier-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\f65d8b8b50b08bfcb0e00fdece75e0a2\play-services-ads-identifier-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\51a0bba0ccdfd068b33aa354c7033d9b\play-services-measurement-sdk-api-18.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\51a0bba0ccdfd068b33aa354c7033d9b\play-services-measurement-sdk-api-18.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\671452687ffce4352b7c0220e1d485a2\play-services-measurement-base-18.0.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\671452687ffce4352b7c0220e1d485a2\play-services-measurement-base-18.0.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\5cb901d6e77858a7cd06a37ac2f19a8e\play-services-stats-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\5cb901d6e77858a7cd06a37ac2f19a8e\play-services-stats-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\0c449a9f5cd296cd55a6d250b0236db7\firebase-measurement-connector-18.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\0c449a9f5cd296cd55a6d250b0236db7\firebase-measurement-connector-18.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\8608c01ae43f3b1b32cd1f523fb35047\jetified-play-services-basement-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\8608c01ae43f3b1b32cd1f523fb35047\jetified-play-services-basement-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\7cb4a46ee535916a64932d3e4f7a44eb\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\7cb4a46ee535916a64932d3e4f7a44eb\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\6b0f1eb76196a5f944e97829f5340894\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\6b0f1eb76196a5f944e97829f5340894\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\97596a5bcc67112c7a90e12c9a6abe33\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\97596a5bcc67112c7a90e12c9a6abe33\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\2e8ff02a4ddd9e6f12bed4a15660813b\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\2e8ff02a4ddd9e6f12bed4a15660813b\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\3f7551d68d789e41bfcd82def576a98f\activity-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\3f7551d68d789e41bfcd82def576a98f\activity-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\faf3e980b959b26518f230543bf12bbf\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\faf3e980b959b26518f230543bf12bbf\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\3e26ef26d15f163a2f1a31a2130a0254\core-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\3e26ef26d15f163a2f1a31a2130a0254\core-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\e735a9c2baf1c0f4c5cf4832deb98cb1\lifecycle-runtime-2.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\e735a9c2baf1c0f4c5cf4832deb98cb1\lifecycle-runtime-2.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\a1a089f17ea2f6046497b236f7553bf2\savedstate-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\a1a089f17ea2f6046497b236f7553bf2\savedstate-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\794b83c518e2b750127caae5468e6b3d\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\794b83c518e2b750127caae5468e6b3d\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\d99ea84fa4adf2984fe4e585a3222652\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\d99ea84fa4adf2984fe4e585a3222652\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-components:16.1.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\7a5c4bfdf5d4590e8c755112e8ea132c\jetified-firebase-components-16.1.0\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-components:16.1.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\7a5c4bfdf5d4590e8c755112e8ea132c\jetified-firebase-components-16.1.0\AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\c41cc3207e1cdfa82e55f02c355616c2\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\c41cc3207e1cdfa82e55f02c355616c2\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\5ffa2f7cdad188079589f742d0e5215a\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\5ffa2f7cdad188079589f742d0e5215a\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\29c9236d8556e66c150b1cba2401ead9\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\29c9236d8556e66c150b1cba2401ead9\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b19955ce5eee2f53f5d89f62699be6dc\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b19955ce5eee2f53f5d89f62699be6dc\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\2eb31a6d28642f338eb229439c98faec\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\2eb31a6d28642f338eb229439c98faec\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\658d29ebd3d5fbfe571528f50a047e26\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\658d29ebd3d5fbfe571528f50a047e26\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:protolite-well-known-types:17.1.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\8d507950016cad98873b4383e6c1beaf\protolite-well-known-types-17.1.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:protolite-well-known-types:17.1.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\8d507950016cad98873b4383e6c1beaf\protolite-well-known-types-17.1.1\AndroidManifest.xml:7:5-9:41
+MERGED from [io.grpc:grpc-android:1.28.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\c40b3a1ade295bee345fced2eee0a115\grpc-android-1.28.0\AndroidManifest.xml:7:5-9:41
+MERGED from [io.grpc:grpc-android:1.28.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\c40b3a1ade295bee345fced2eee0a115\grpc-android-1.28.0\AndroidManifest.xml:7:5-9:41
+INJECTED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\debug\AndroidManifest.xml
+INJECTED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\debug\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\debug\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\debug\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\debug\AndroidManifest.xml:6:5-66
+MERGED from [com.google.firebase:firebase-storage:19.2.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\83427d6c7cea12c20dc188f2d495e58a\firebase-storage-19.2.1\AndroidManifest.xml:27:5-67
+MERGED from [com.google.firebase:firebase-storage:19.2.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\83427d6c7cea12c20dc188f2d495e58a\firebase-storage-19.2.1\AndroidManifest.xml:27:5-67
+MERGED from [com.google.firebase:firebase-firestore:22.1.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\33a42d189be3bbac0862ca3876b5f43c\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:14:5-67
+MERGED from [com.google.firebase:firebase-firestore:22.1.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\33a42d189be3bbac0862ca3876b5f43c\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:14:5-67
+MERGED from [com.google.firebase:firebase-database:19.7.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\09c199edfaf88812cf66b0152132279f\firebase-database-19.7.0\AndroidManifest.xml:26:5-67
+MERGED from [com.google.firebase:firebase-database:19.7.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\09c199edfaf88812cf66b0152132279f\firebase-database-19.7.0\AndroidManifest.xml:26:5-67
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\6c56d343dadbd5de2e9c955fa8e4e1c1\play-services-maps-17.0.0\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\6c56d343dadbd5de2e9c955fa8e4e1c1\play-services-maps-17.0.0\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\2a1d642a571731beebc925a7dbea79fd\play-services-measurement-api-18.0.2\AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\2a1d642a571731beebc925a7dbea79fd\play-services-measurement-api-18.0.2\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-installations:16.3.5] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\e621b86a65d937145bd19c8efcb92faf\firebase-installations-16.3.5\AndroidManifest.xml:11:5-67
+MERGED from [com.google.firebase:firebase-installations:16.3.5] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\e621b86a65d937145bd19c8efcb92faf\firebase-installations-16.3.5\AndroidManifest.xml:11:5-67
+MERGED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\178d21e55dcd9e2722f4454aab156514\play-services-measurement-impl-18.0.2\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\178d21e55dcd9e2722f4454aab156514\play-services-measurement-impl-18.0.2\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\51a0bba0ccdfd068b33aa354c7033d9b\play-services-measurement-sdk-api-18.0.2\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\51a0bba0ccdfd068b33aa354c7033d9b\play-services-measurement-sdk-api-18.0.2\AndroidManifest.xml:23:5-67
+	android:name
+		ADDED from E:\Courses\Programming\Flutter\Projects\DoctorsBooking\android\app\src\debug\AndroidManifest.xml:6:22-64
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [:firebase_storage] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+MERGED from [:cloud_firestore] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+MERGED from [:cloud_firestore] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_database] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_database] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_core] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_core] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+MERGED from [com.google.firebase:firebase-storage:19.2.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\83427d6c7cea12c20dc188f2d495e58a\firebase-storage-19.2.1\AndroidManifest.xml:30:9-36:19
+MERGED from [com.google.firebase:firebase-storage:19.2.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\83427d6c7cea12c20dc188f2d495e58a\firebase-storage-19.2.1\AndroidManifest.xml:30:9-36:19
+MERGED from [com.google.firebase:firebase-firestore:22.1.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\33a42d189be3bbac0862ca3876b5f43c\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:17:9-23:19
+MERGED from [com.google.firebase:firebase-firestore:22.1.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\33a42d189be3bbac0862ca3876b5f43c\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:17:9-23:19
+MERGED from [com.google.firebase:firebase-database:19.7.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\09c199edfaf88812cf66b0152132279f\firebase-database-19.7.0\AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.firebase:firebase-database:19.7.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\09c199edfaf88812cf66b0152132279f\firebase-database-19.7.0\AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\2a1d642a571731beebc925a7dbea79fd\play-services-measurement-api-18.0.2\AndroidManifest.xml:27:9-33:19
+MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\2a1d642a571731beebc925a7dbea79fd\play-services-measurement-api-18.0.2\AndroidManifest.xml:27:9-33:19
+MERGED from [com.google.firebase:firebase-installations:16.3.5] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\e621b86a65d937145bd19c8efcb92faf\firebase-installations-16.3.5\AndroidManifest.xml:15:9-21:19
+MERGED from [com.google.firebase:firebase-installations:16.3.5] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\e621b86a65d937145bd19c8efcb92faf\firebase-installations-16.3.5\AndroidManifest.xml:15:9-21:19
+MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b4e9a26ecc1e88529feb3b99b010e011\jetified-firebase-common-19.5.0\AndroidManifest.xml:33:9-46:19
+MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b4e9a26ecc1e88529feb3b99b010e011\jetified-firebase-common-19.5.0\AndroidManifest.xml:33:9-46:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-storage:19.2.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\83427d6c7cea12c20dc188f2d495e58a\firebase-storage-19.2.1\AndroidManifest.xml:32:13-37
+	tools:targetApi
+		ADDED from [com.google.firebase:firebase-common:19.5.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b4e9a26ecc1e88529feb3b99b010e011\jetified-firebase-common-19.5.0\AndroidManifest.xml:37:13-32
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:19.5.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b4e9a26ecc1e88529feb3b99b010e011\jetified-firebase-common-19.5.0\AndroidManifest.xml:35:13-43
+	android:name
+		ADDED from [:firebase_storage] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
+meta-data#com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar
+ADDED from [:firebase_storage] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+	android:value
+		ADDED from [:firebase_storage] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+	android:name
+		ADDED from [:firebase_storage] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-126
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from [:image_picker] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-80
+	android:name
+		ADDED from [:image_picker] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from [:image_picker] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-81
+	android:name
+		ADDED from [:image_picker] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-78
+provider#io.flutter.plugins.imagepicker.ImagePickerFileProvider
+ADDED from [:image_picker] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:9-19:20
+	android:grantUriPermissions
+		ADDED from [:image_picker] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-47
+	android:authorities
+		ADDED from [:image_picker] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-74
+	android:exported
+		ADDED from [:image_picker] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-37
+	android:name
+		ADDED from [:image_picker] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-82
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:image_picker] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:16:13-18:75
+	android:resource
+		ADDED from [:image_picker] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:18:17-72
+	android:name
+		ADDED from [:image_picker] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-67
+meta-data#com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar
+ADDED from [:cloud_firestore] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+	android:value
+		ADDED from [:cloud_firestore] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+	android:name
+		ADDED from [:cloud_firestore] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-134
+meta-data#com.google.firebase.components:io.flutter.plugins.firebase.database.FlutterFirebaseAppRegistrar
+ADDED from [:firebase_database] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+	android:value
+		ADDED from [:firebase_database] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+	android:name
+		ADDED from [:firebase_database] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-127
+meta-data#com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar
+ADDED from [:firebase_core] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+	android:value
+		ADDED from [:firebase_core] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+	android:name
+		ADDED from [:firebase_core] E:\Courses\Programming\Flutter\Projects\DoctorsBooking\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.firebase:firebase-storage:19.2.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\83427d6c7cea12c20dc188f2d495e58a\firebase-storage-19.2.1\AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-firestore:22.1.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\33a42d189be3bbac0862ca3876b5f43c\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:13:5-79
+MERGED from [com.google.firebase:firebase-firestore:22.1.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\33a42d189be3bbac0862ca3876b5f43c\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:13:5-79
+MERGED from [com.google.firebase:firebase-database:19.7.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\09c199edfaf88812cf66b0152132279f\firebase-database-19.7.0\AndroidManifest.xml:25:5-79
+MERGED from [com.google.firebase:firebase-database:19.7.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\09c199edfaf88812cf66b0152132279f\firebase-database-19.7.0\AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\6c56d343dadbd5de2e9c955fa8e4e1c1\play-services-maps-17.0.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\6c56d343dadbd5de2e9c955fa8e4e1c1\play-services-maps-17.0.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\2a1d642a571731beebc925a7dbea79fd\play-services-measurement-api-18.0.2\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\2a1d642a571731beebc925a7dbea79fd\play-services-measurement-api-18.0.2\AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-installations:16.3.5] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\e621b86a65d937145bd19c8efcb92faf\firebase-installations-16.3.5\AndroidManifest.xml:10:5-79
+MERGED from [com.google.firebase:firebase-installations:16.3.5] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\e621b86a65d937145bd19c8efcb92faf\firebase-installations-16.3.5\AndroidManifest.xml:10:5-79
+MERGED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\178d21e55dcd9e2722f4454aab156514\play-services-measurement-impl-18.0.2\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\178d21e55dcd9e2722f4454aab156514\play-services-measurement-impl-18.0.2\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\51a0bba0ccdfd068b33aa354c7033d9b\play-services-measurement-sdk-api-18.0.2\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\51a0bba0ccdfd068b33aa354c7033d9b\play-services-measurement-sdk-api-18.0.2\AndroidManifest.xml:24:5-79
+MERGED from [io.grpc:grpc-android:1.28.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\c40b3a1ade295bee345fced2eee0a115\grpc-android-1.28.0\AndroidManifest.xml:11:5-79
+MERGED from [io.grpc:grpc-android:1.28.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\c40b3a1ade295bee345fced2eee0a115\grpc-android-1.28.0\AndroidManifest.xml:11:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-storage:19.2.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\83427d6c7cea12c20dc188f2d495e58a\firebase-storage-19.2.1\AndroidManifest.xml:26:22-76
+meta-data#com.google.firebase.components:com.google.firebase.storage.StorageRegistrar
+ADDED from [com.google.firebase:firebase-storage:19.2.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\83427d6c7cea12c20dc188f2d495e58a\firebase-storage-19.2.1\AndroidManifest.xml:33:13-35:85
+	android:value
+		ADDED from [com.google.firebase:firebase-storage:19.2.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\83427d6c7cea12c20dc188f2d495e58a\firebase-storage-19.2.1\AndroidManifest.xml:35:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-storage:19.2.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\83427d6c7cea12c20dc188f2d495e58a\firebase-storage-19.2.1\AndroidManifest.xml:34:17-107
+meta-data#com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar
+ADDED from [com.google.firebase:firebase-firestore:22.1.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\33a42d189be3bbac0862ca3876b5f43c\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:20:13-22:85
+	android:value
+		ADDED from [com.google.firebase:firebase-firestore:22.1.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\33a42d189be3bbac0862ca3876b5f43c\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:22:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore:22.1.1] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\33a42d189be3bbac0862ca3876b5f43c\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:21:17-111
+meta-data#com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar
+ADDED from [com.google.firebase:firebase-database:19.7.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\09c199edfaf88812cf66b0152132279f\firebase-database-19.7.0\AndroidManifest.xml:32:13-34:85
+	android:value
+		ADDED from [com.google.firebase:firebase-database:19.7.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\09c199edfaf88812cf66b0152132279f\firebase-database-19.7.0\AndroidManifest.xml:34:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-database:19.7.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\09c199edfaf88812cf66b0152132279f\firebase-database-19.7.0\AndroidManifest.xml:33:17-109
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\6c56d343dadbd5de2e9c955fa8e4e1c1\play-services-maps-17.0.0\AndroidManifest.xml:26:5-28:35
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\6c56d343dadbd5de2e9c955fa8e4e1c1\play-services-maps-17.0.0\AndroidManifest.xml:27:9-41
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\6c56d343dadbd5de2e9c955fa8e4e1c1\play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
+uses-library#org.apache.http.legacy
+ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\6c56d343dadbd5de2e9c955fa8e4e1c1\play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\6c56d343dadbd5de2e9c955fa8e4e1c1\play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\6c56d343dadbd5de2e9c955fa8e4e1c1\play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\30a8c856d8fe9a20d62f614b9db1a8ff\play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\30a8c856d8fe9a20d62f614b9db1a8ff\play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\30a8c856d8fe9a20d62f614b9db1a8ff\play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\30a8c856d8fe9a20d62f614b9db1a8ff\play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\2a1d642a571731beebc925a7dbea79fd\play-services-measurement-api-18.0.2\AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\178d21e55dcd9e2722f4454aab156514\play-services-measurement-impl-18.0.2\AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\178d21e55dcd9e2722f4454aab156514\play-services-measurement-impl-18.0.2\AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\51a0bba0ccdfd068b33aa354c7033d9b\play-services-measurement-sdk-api-18.0.2\AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\51a0bba0ccdfd068b33aa354c7033d9b\play-services-measurement-sdk-api-18.0.2\AndroidManifest.xml:25:5-68
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\2a1d642a571731beebc925a7dbea79fd\play-services-measurement-api-18.0.2\AndroidManifest.xml:24:22-65
+meta-data#com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar
+ADDED from [com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\2a1d642a571731beebc925a7dbea79fd\play-services-measurement-api-18.0.2\AndroidManifest.xml:30:13-32:85
+	android:value
+		ADDED from [com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\2a1d642a571731beebc925a7dbea79fd\play-services-measurement-api-18.0.2\AndroidManifest.xml:32:17-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\2a1d642a571731beebc925a7dbea79fd\play-services-measurement-api-18.0.2\AndroidManifest.xml:31:17-139
+meta-data#com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar
+ADDED from [com.google.firebase:firebase-installations:16.3.5] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\e621b86a65d937145bd19c8efcb92faf\firebase-installations-16.3.5\AndroidManifest.xml:18:13-20:85
+	android:value
+		ADDED from [com.google.firebase:firebase-installations:16.3.5] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\e621b86a65d937145bd19c8efcb92faf\firebase-installations-16.3.5\AndroidManifest.xml:20:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-installations:16.3.5] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\e621b86a65d937145bd19c8efcb92faf\firebase-installations-16.3.5\AndroidManifest.xml:19:17-127
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:19.5.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b4e9a26ecc1e88529feb3b99b010e011\jetified-firebase-common-19.5.0\AndroidManifest.xml:26:9-31:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:19.5.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b4e9a26ecc1e88529feb3b99b010e011\jetified-firebase-common-19.5.0\AndroidManifest.xml:28:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:19.5.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b4e9a26ecc1e88529feb3b99b010e011\jetified-firebase-common-19.5.0\AndroidManifest.xml:30:13-37
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:19.5.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b4e9a26ecc1e88529feb3b99b010e011\jetified-firebase-common-19.5.0\AndroidManifest.xml:29:13-43
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:19.5.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b4e9a26ecc1e88529feb3b99b010e011\jetified-firebase-common-19.5.0\AndroidManifest.xml:31:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:19.5.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b4e9a26ecc1e88529feb3b99b010e011\jetified-firebase-common-19.5.0\AndroidManifest.xml:27:13-77
+meta-data#com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar
+ADDED from [com.google.firebase:firebase-common:19.5.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b4e9a26ecc1e88529feb3b99b010e011\jetified-firebase-common-19.5.0\AndroidManifest.xml:43:13-45:85
+	android:value
+		ADDED from [com.google.firebase:firebase-common:19.5.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b4e9a26ecc1e88529feb3b99b010e011\jetified-firebase-common-19.5.0\AndroidManifest.xml:45:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-common:19.5.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\b4e9a26ecc1e88529feb3b99b010e011\jetified-firebase-common-19.5.0\AndroidManifest.xml:44:17-121
+uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
+ADDED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\178d21e55dcd9e2722f4454aab156514\play-services-measurement-impl-18.0.2\AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\178d21e55dcd9e2722f4454aab156514\play-services-measurement-impl-18.0.2\AndroidManifest.xml:26:5-110
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:26:22-107
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:29:9-33:20
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:31:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:30:13-85
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:35:9-38:40
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:38:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:36:13-84
+service#com.google.android.gms.measurement.AppMeasurementJobService
+ADDED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:39:9-43:72
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:41:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:42:13-37
+	android:permission
+		ADDED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:43:13-69
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:40:13-87
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\8608c01ae43f3b1b32cd1f523fb35047\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\8608c01ae43f3b1b32cd1f523fb35047\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Win 8\.gradle\caches\transforms-2\files-2.1\8608c01ae43f3b1b32cd1f523fb35047\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
