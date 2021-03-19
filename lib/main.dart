@@ -1,15 +1,21 @@
-import 'package:doctors_booking/models/categories/categoryController.dart';
+import 'package:doctors_booking/models/mainmodel.dart';
 import 'package:doctors_booking/screens/login.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:flutter/material.dart';
+// import 'package:firebase_core/firebase_core.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp();
+
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScopedModel(
-      model: CategoryController(),
+      model: MainModel(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Login(),

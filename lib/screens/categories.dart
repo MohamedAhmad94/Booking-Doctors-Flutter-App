@@ -1,7 +1,7 @@
+import 'package:doctors_booking/models/mainmodel.dart';
 import 'package:doctors_booking/widgets/homepageitem.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
-import 'package:doctors_booking/models/categories/categoryController.dart';
 
 class Categories extends StatefulWidget {
   @override
@@ -51,19 +51,19 @@ class _CategoriesState extends State<Categories> {
       body: Container(
           margin: EdgeInsets.all(10),
           child: ScopedModelDescendant(
-            builder: (context, child, CategoryController category) {
-              if (category.allCategories.isEmpty) {
+            builder: (context, child, MainModel model) {
+              if (model.allCategories.isEmpty) {
                 return Center(child: Text('No Categories Found'));
               } else {
                 return GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2, childAspectRatio: 0.85),
                     scrollDirection: Axis.vertical,
-                    itemCount: category.allCategories.length,
+                    itemCount: model.allCategories.length,
                     itemBuilder: (context, index) {
                       return HomePageItem(
-                          category.allCategories[index].categoryImage,
-                          category.allCategories[index].categoryName,
+                          model.allCategories[index].categoryImage,
+                          model.allCategories[index].categoryName,
                           index);
                     });
               }

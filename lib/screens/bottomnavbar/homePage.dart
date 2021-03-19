@@ -9,12 +9,12 @@ import 'package:doctors_booking/widgets/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:scoped_model/scoped_model.dart';
-import 'package:doctors_booking/models/categories/categoryController.dart';
+import 'package:doctors_booking/models/mainmodel.dart';
 
 class HomePage extends StatefulWidget {
-  final CategoryController category;
+  final MainModel model;
 
-  HomePage(this.category);
+  HomePage(this.model);
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -22,11 +22,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   void initState() {
-    widget.category.getCategories();
+    widget.model.getCategories();
+    widget.model.getDoctors();
     super.initState();
   }
-
-  // final Future<FirebaseApp> _initialization = Firebase.initializeApp();
 
   // Map<int, List> categories = {
   //   0: [
@@ -54,8 +53,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.grey[50],
       body: Container(
-        child: ScopedModelDescendant(
-            builder: (context, child, CategoryController category) {
+        child:
+            ScopedModelDescendant(builder: (context, child, MainModel model) {
           return ListView(
             scrollDirection: Axis.vertical,
             children: [
@@ -114,36 +113,14 @@ class _HomePageState extends State<HomePage> {
               headLine("Categories"),
               Container(
                 height: MediaQuery.of(context).size.height / 3,
-                child: category.isCategoryLoading == true
+                child: model.isCategoryLoading == true
                     ? Center(child: Loading())
-                    : scrollSection(category),
+                    : model.allCategories.isEmpty
+                        ? Center(child: Text('no data found'))
+                        : scrollSection(model),
               ),
               headLine("Suggested Doctors"),
-              suggestedDoctors(
-                  "Dr. Ahmed Saber",
-                  "https://pulse.doctor/media_/images/photos/doctor4.jpg",
-                  "Dental",
-                  4.1,
-                  "165 Reviews"),
-              suggestedDoctors(
-                  "Dr. Ahmed Ali",
-                  "https://www.pinnaclecare.com/wp-content/uploads/2017/12/bigstock-African-young-doctor-portrait-28825394-300x425.jpg",
-                  "Cardio",
-                  4.3,
-                  "120 Reviews"),
-              suggestedDoctors(
-                  "Dr. Adel Hamed",
-                  "https://s3-eu-west-1.amazonaws.com/intercare-web-public/wysiwyg-uploads%2F1569586526901-doctor.jpg",
-                  "General",
-                  4.8,
-                  "130 Reviews"),
-              suggestedDoctors(
-                  "Dr. Samia Omar",
-                  "https://image.freepik.com/free-photo/beautiful-young-female-doctor-looking-camera-office_1301-7807.jpg",
-                  "Therapy",
-                  4.6,
-                  "150 Reviews"),
-              headLine("My Appointments"),
+              allDoctors(model),
             ],
           );
         }),
@@ -173,19 +150,19 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  scrollSection(CategoryController category) {
+  scrollSection(MainModel model) {
     return ListView.builder(
       scrollDirection: Axis.horizontal,
-      itemCount: category.allCategories.length,
+      itemCount: model.allCategories.length,
       itemBuilder: (context, index) {
-        return HomePageItem(category.allCategories[index].categoryName,
-            category.allCategories[index].categoryImage, index);
+        return HomePageItem(model.allCategories[index].categoryImage,
+            model.allCategories[index].categoryName, index);
       },
     );
   }
 
   suggestedDoctors(String doctorName, String doctorImage, String doctorCategory,
-      double doctorRating, String reviews) {
+      double doctorRating, String id, MainModel model) {
     return Container(
       margin: EdgeInsets.all(10),
       decoration: BoxDecoration(
@@ -236,18 +213,19 @@ class _HomePageState extends State<HomePage> {
                       });
                     }),
                 Text(
-                  reviews,
+                  "${doctorRating.toString()}",
                   style: TextStyle(
-                      color: Colors.amber,
+                      color: Colors.black,
                       fontSize: 15.0,
                       fontWeight: FontWeight.bold),
-                ),
+                )
               ],
             ),
           ],
         ),
         trailing: Icon(Icons.navigate_next, color: Colors.grey, size: 25),
         onTap: () {
+          model.getDoctorID(id);
           Navigator.push(
             context,
             MaterialPageRoute(builder: (_) {
@@ -278,5 +256,21 @@ class _HomePageState extends State<HomePage> {
         }));
       },
     );
+  }
+
+  allDoctors(MainModel model) {
+    if (model.isGetDoctorloading == true) {
+      return Center(child: Loading());
+    } else if (model.allDoctors.isEmpty) {
+      return Center(child: Text('No Suggested Doctors Available'));
+    } else {
+      return Column(
+        children: [
+          for (var i in model.allDoctors)
+            suggestedDoctors(
+                i.doctorName!, i.image!, i.category!, i.rating!, i.id!, model),
+        ],
+      );
+    }
   }
 }

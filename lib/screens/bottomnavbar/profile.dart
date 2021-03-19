@@ -1,3 +1,4 @@
+import 'package:doctors_booking/screens/add.dart';
 import 'package:doctors_booking/screens/login.dart';
 import 'package:doctors_booking/widgets/customappbar.dart';
 import 'package:flutter/material.dart';
@@ -109,20 +110,25 @@ class _ProfileState extends State<Profile> {
               ),
               'Profile',
             ),
-            menuItem("Home", Icons.home),
-            menuItem("My Appointments", Icons.calendar_today),
-            menuItem(
-                "My Medicine Delivery Orders", Icons.medical_services_sharp),
-            menuItem("Favorites", Icons.favorite_border_sharp),
-            menuItem("Payment Detailes", Icons.payment_sharp),
-            menuItem("Logout", Icons.logout),
+            menuItem("Add", Icons.add, () {
+              Navigator.push(context, MaterialPageRoute(builder: (_) {
+                return Add();
+              }));
+            }),
+            menuItem("Favorites", Icons.favorite_border_sharp, () {}),
+            menuItem("Payment Detailes", Icons.payment_sharp, () {}),
+            menuItem("Logout", Icons.logout, () {
+              Navigator.push(context, MaterialPageRoute(builder: (_) {
+                return Login();
+              }));
+            }),
           ],
         ),
       ),
     );
   }
 
-  menuItem(String iconName, IconData iconData) {
+  menuItem(String iconName, IconData iconData, Function? onTap()) {
     return Container(
       margin: EdgeInsets.all(10.0),
       decoration: BoxDecoration(
@@ -137,13 +143,7 @@ class _ProfileState extends State<Profile> {
                 fontSize: 15,
                 fontWeight: FontWeight.bold)),
         trailing: Icon(Icons.navigate_next, color: Colors.grey, size: 20.0),
-        onTap: iconName == "Logout"
-            ? () {
-                Navigator.push(context, MaterialPageRoute(builder: (_) {
-                  return Login();
-                }));
-              }
-            : null,
+        onTap: onTap,
       ),
     );
   }

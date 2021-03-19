@@ -1,9 +1,9 @@
+import 'package:doctors_booking/models/mainmodel.dart';
 import 'package:doctors_booking/screens/bottomnavbar/appointments.dart';
 import 'package:doctors_booking/screens/bottomnavbar/homePage.dart';
 import 'package:doctors_booking/screens/bottomnavbar/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
-import 'package:doctors_booking/models/categories/categoryController.dart';
 
 class BottomNavBar extends StatefulWidget {
   @override
@@ -39,10 +39,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
           });
         },
       ),
-      body: ScopedModelDescendant(
-          builder: (context, child, CategoryController category) {
+      body: ScopedModelDescendant(builder: (context, child, MainModel model) {
         if (current == 0) {
-          return HomePage(category);
+          return HomePage(model);
         } else if (current == 1) {
           return Appointments();
         } else {

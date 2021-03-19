@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class HomePageItem extends StatefulWidget {
-  final String? category;
+  final String? title;
   final String? image;
   final int? index;
 
-  HomePageItem(this.category, this.image, this.index);
+  HomePageItem(this.image, this.title, this.index);
 
   @override
   _HomePageItemState createState() => _HomePageItemState();
@@ -25,9 +25,9 @@ class _HomePageItemState extends State<HomePageItem> {
               colorFilter: ColorFilter.mode(Colors.black38, BlendMode.color))),
       alignment: Alignment.center,
       child: Text(
-        widget.category!,
+        widget.title!,
         style: TextStyle(
-            color: Colors.black, fontSize: 25.0, fontWeight: FontWeight.bold),
+            color: Colors.black, fontSize: 20.0, fontWeight: FontWeight.bold),
       ),
     );
   }

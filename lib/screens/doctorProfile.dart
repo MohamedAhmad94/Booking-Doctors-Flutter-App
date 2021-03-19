@@ -2,6 +2,8 @@ import 'package:doctors_booking/widgets/favicon.dart';
 import 'package:doctors_booking/widgets/reviewitem.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:scoped_model/scoped_model.dart';
+import 'package:doctors_booking/models/mainmodel.dart';
 
 class DoctorProfile extends StatefulWidget {
   @override
@@ -14,15 +16,17 @@ class _DoctorProfileState extends State<DoctorProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey[50],
-        body: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-          ),
-          child: ListView(
+      backgroundColor: Colors.grey[50],
+      body: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+        ),
+        child:
+            ScopedModelDescendant(builder: (context, child, MainModel model) {
+          return ListView(
             scrollDirection: Axis.vertical,
             children: [
-              barItem(),
+              barItem(model),
               headline("Biography"),
               doctorCard(
                 225,
@@ -40,14 +44,14 @@ class _DoctorProfileState extends State<DoctorProfile> {
                       children: [
                         Image(
                             image: NetworkImage(
-                                "https://identityguide.hms.harvard.edu/files/hmsidentityguide/files/hms_logo_final_rgb.png?m=1580238232"),
-                            width: MediaQuery.of(context).size.width / 3,
-                            height: 100),
+                                model.selectedDoctor.collegeImage!),
+                            width: MediaQuery.of(context).size.width / 4,
+                            height: 50.0),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Harvard Medical School",
+                              "${model.selectedDoctor.university.toString()}",
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 15,
@@ -55,7 +59,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                                   height: 1.5),
                             ),
                             Text(
-                              "United Arab Emirates",
+                              "Egypt",
                               style: TextStyle(
                                   color: Colors.black54,
                                   fontSize: 14,
@@ -99,7 +103,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                   children: [
                     ListTile(
                         leading: Text(
-                          "4.0",
+                          "${model.selectedDoctor.rating.toString()}",
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 35,
@@ -114,7 +118,8 @@ class _DoctorProfileState extends State<DoctorProfile> {
                               fontWeight: FontWeight.bold,
                               height: 1.5),
                         ),
-                        subtitle: ratingBar(4.0)),
+                        subtitle:
+                            ratingBar(model.selectedDoctor.rating!, model)),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -133,11 +138,16 @@ class _DoctorProfileState extends State<DoctorProfile> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            detailedRatings("Explains Condition Well", 4.8),
-                            detailedRatings("Answers Questions", 4.2),
-                            detailedRatings("Punctionality", 3.2),
-                            detailedRatings("Professionalism", 3.2),
-                            detailedRatings("Attitution", 3.2),
+                            detailedRatings("Explains Condition Well",
+                                model.selectedDoctor.rating!, model),
+                            detailedRatings("Answers Questions",
+                                model.selectedDoctor.rating!, model),
+                            detailedRatings("Punctionality",
+                                model.selectedDoctor.rating!, model),
+                            detailedRatings("Professionalism",
+                                model.selectedDoctor.rating!, model),
+                            detailedRatings("Attitution",
+                                model.selectedDoctor.rating!, model),
                           ],
                         ),
                       ],
@@ -152,7 +162,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                             color: Colors.black54,
                             fontSize: 15.0,
                             fontWeight: FontWeight.normal)),
-                    ratingBar(4.7),
+                    ratingBar(model.selectedDoctor.rating!, model),
                     Divider(
                       color: Colors.black12,
                       thickness: 3,
@@ -163,13 +173,15 @@ class _DoctorProfileState extends State<DoctorProfile> {
                             color: Colors.black54,
                             fontSize: 15.0,
                             fontWeight: FontWeight.normal)),
-                    ratingBar(2.5),
+                    ratingBar(model.selectedDoctor.rating!, model),
                   ],
                 ),
               ),
             ],
-          ),
-        ));
+          );
+        }),
+      ),
+    );
   }
 
   ratings(int rate, double width) {
@@ -192,7 +204,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
     );
   }
 
-  detailedRatings(String type, double rating) {
+  detailedRatings(String type, double rating, MainModel model) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -206,7 +218,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
               height: 1),
         ),
         Text(
-          "${rating.toString()}",
+          "${model.selectedDoctor.rating.toString()}",
           style: TextStyle(
               color: Colors.black,
               fontSize: 14,
@@ -217,7 +229,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
     );
   }
 
-  ratingBar(double currentRating) {
+  ratingBar(double currentRating, MainModel model) {
     return RatingBar(
       onRatingUpdate: (currentRating2) {
         setState(() {
@@ -225,7 +237,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
         });
       },
       direction: Axis.horizontal,
-      initialRating: currentRating,
+      initialRating: model.selectedDoctor.rating!,
       itemCount: 5,
       itemSize: 15,
       minRating: 1.0,
@@ -271,7 +283,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
     );
   }
 
-  barItem() {
+  barItem(MainModel model) {
     return Container(
       height: 450,
       margin: EdgeInsets.only(bottom: 10.0),
@@ -281,8 +293,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
             height: 250,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage(
-                    "https://s3-eu-west-1.amazonaws.com/intercare-web-public/wysiwyg-uploads%2F1569586526901-doctor.jpg"),
+                image: NetworkImage(model.selectedDoctor.image!),
                 fit: BoxFit.fill,
               ),
             ),
@@ -324,26 +335,28 @@ class _DoctorProfileState extends State<DoctorProfile> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Dr. Ahmed Saber",
+                          Text(model.selectedDoctor.doctorName!,
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                   height: 1.5)),
-                          Text("Dental",
+                          Text(model.selectedDoctor.category!,
                               style: TextStyle(
                                   color: Color(0xff00BBDC),
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                   height: 1.5)),
-                          ReviewItem(4.0, 165),
-                          Text("Giza - Egypt",
+                          ReviewItem(model.selectedDoctor.rating!,
+                              model.selectedDoctor.reviews!),
+                          Text(model.selectedDoctor.location!,
                               style: TextStyle(
                                   color: Colors.black54,
                                   fontSize: 16.0,
                                   fontWeight: FontWeight.bold,
                                   height: 1.5)),
-                          Text("EGP 200",
+                          Text(
+                              "${model.selectedDoctor.fees.toString()} ${model.selectedDoctor.currency.toString()}",
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:doctors_booking/widgets/searchresult.dart';
+import 'package:scoped_model/scoped_model.dart';
+import 'package:doctors_booking/models/mainmodel.dart';
 
 class Result extends StatefulWidget {
   @override
@@ -73,25 +75,26 @@ class _ResultState extends State<Result> {
               top: true,
               child: filter(searchFilters),
             ),
-            Flexible(
-              child: ListView.builder(
-                scrollDirection: Axis.vertical,
-                itemCount: 5,
-                itemBuilder: (context, index) {
-                  return SearchResult(
-                    doctorName: "Dr. Ahmed Saber",
-                    type: "Dental",
-                    rating: 4.0,
-                    reviews: 165,
-                    location: "Cairo - Egypt",
-                    fees: 200,
-                    currency: "EGP",
-                    image:
-                        "https://pulse.doctor/media_/images/photos/doctor4.jpg",
-                  );
-                },
-              ),
-            ),
+            ScopedModelDescendant(builder: (context, child, MainModel model) {
+              return Flexible(
+                child: ListView.builder(
+                  scrollDirection: Axis.vertical,
+                  itemCount: model.allDoctors.length,
+                  itemBuilder: (context, index) {
+                    return SearchResult(
+                      doctorName: model.allDoctors[index].doctorName,
+                      type: model.allDoctors[index].category,
+                      rating: model.allDoctors[index].rating,
+                      reviews: model.allDoctors[index].reviews,
+                      location: model.allDoctors[index].location,
+                      fees: model.allDoctors[index].fees,
+                      currency: model.allDoctors[index].currency,
+                      image: model.allDoctors[index].image,
+                    );
+                  },
+                ),
+              );
+            }),
           ],
         ),
       ),
