@@ -2,6 +2,8 @@ import 'package:doctors_booking/models/categories/categoryModel.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
+// import 'package:http/http.dart' as http;
+// import 'dart:convert';
 
 mixin CategoryController on Model {
   bool _isCategoryLoading = false;
@@ -19,7 +21,17 @@ mixin CategoryController on Model {
     _isCategoryLoading = true;
     notifyListeners();
 
-    // Decoding
+    // realtime database decoding
+    // http.Response _response = await http.get(Uri.https(
+    //     'doctors-booking-307313-default-rtdb.firebaseio.com', '/Categories'));
+    // var _newData = json.decode(_response.body);
+
+    // _newData.forEach((x, i) {
+    //   final CategoryModel _anotherCategory = CategoryModel.fromJson(i, i.id);
+    //   _allCategories.add(_anotherCategory);
+    // });
+
+    // Firestore database decoding
     FirebaseFirestore.instance
         .collection('Categories')
         .get()
@@ -44,6 +56,14 @@ mixin CategoryController on Model {
       'categoryName': categoryName,
       'categoryImage': categoryImage,
     };
+
+    // realtime database encoding
+    // http.Response _response = await http.post(
+    //     Uri.https('doctors-booking-307313-default-rtdb.firebaseio.com',
+    //         '/Categories'),
+    //     body: json.encode(_data));
+
+    // firestore database encoding
 
     FirebaseFirestore.instance.collection('Categories').add(_data);
 
