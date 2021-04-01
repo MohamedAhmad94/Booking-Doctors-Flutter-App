@@ -4,6 +4,7 @@ import 'package:doctors_booking/widgets/customappbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Profile extends StatefulWidget {
   @override
@@ -118,6 +119,7 @@ class _ProfileState extends State<Profile> {
             menuItem("Favorites", Icons.favorite_border_sharp, () {}),
             menuItem("Payment Detailes", Icons.payment_sharp, () {}),
             menuItem("Logout", Icons.logout, () {
+              FirebaseAuth.instance.signOut();
               Navigator.push(context, MaterialPageRoute(builder: (_) {
                 return Login();
               }));

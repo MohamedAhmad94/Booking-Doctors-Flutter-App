@@ -2,11 +2,11 @@ import 'package:doctors_booking/models/mainmodel.dart';
 import 'package:doctors_booking/screens/login.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:flutter/material.dart';
-// import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
 
   runApp(MyApp());
 }
@@ -23,7 +23,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// AIzaSyAfisyN1IRZB6AR3kR4f6EaqRwL1B44cxE >> android
-// AIzaSyC0abzh7PvrHy9x0sR3chRI6sS0jQAZcYU >> iOs
-// A7:31:56:E8:CC:83:CD:28:6C:CF:32:5E:FA:7E:04:E0:D2:5E:C1:63 >> fingerprint

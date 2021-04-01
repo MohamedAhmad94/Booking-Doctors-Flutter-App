@@ -1,7 +1,6 @@
 import 'package:doctors_booking/models/categories/categoryModel.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
 // import 'package:http/http.dart' as http;
 // import 'dart:convert';
 
@@ -15,9 +14,9 @@ mixin CategoryController on Model {
   bool _isAddCategoryLoading = false;
   bool get isAddCategoryLoading => _isAddCategoryLoading;
 
-  getCategories() async {
-    await Firebase.initializeApp();
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
 
+  getCategories() async {
     _isCategoryLoading = true;
     notifyListeners();
 
@@ -32,10 +31,7 @@ mixin CategoryController on Model {
     // });
 
     // Firestore database decoding
-    FirebaseFirestore.instance
-        .collection('Categories')
-        .get()
-        .then((QuerySnapshot shot) {
+    firestore.collection('Categories').get().then((QuerySnapshot shot) {
       shot.docs.forEach((i) {
         final CategoryModel _newCategory = CategoryModel.fromJson(i, i.id);
         _allCategories.add(_newCategory);
@@ -47,8 +43,6 @@ mixin CategoryController on Model {
   }
 
   addCategory(String categoryName, String categoryImage) async {
-    await Firebase.initializeApp();
-
     _isAddCategoryLoading = true;
     notifyListeners();
 
@@ -65,7 +59,7 @@ mixin CategoryController on Model {
 
     // firestore database encoding
 
-    FirebaseFirestore.instance.collection('Categories').add(_data);
+    firestore.collection('Categories').add(_data);
 
     _isAddCategoryLoading = false;
     notifyListeners();

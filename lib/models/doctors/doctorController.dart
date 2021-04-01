@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:doctors_booking/models/doctors/doctorModel.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:image_picker/image_picker.dart';
 
 mixin DoctorController on Model {
@@ -13,6 +12,8 @@ mixin DoctorController on Model {
 
   List<DoctorModel> _allDoctors = [];
   List<DoctorModel> get allDoctors => _allDoctors;
+
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
 
   String? _selectedID;
   getDoctorID(String id) {
@@ -36,8 +37,6 @@ mixin DoctorController on Model {
       String university,
       String collegeImage,
       String currency) async {
-    await Firebase.initializeApp();
-
     _isAddDoctorLoading = true;
     notifyListeners();
 
@@ -54,21 +53,16 @@ mixin DoctorController on Model {
       "currency": currency,
     };
 
-    FirebaseFirestore.instance.collection('DRs').add(_doctorDate);
+    firestore.collection('DRs').add(_doctorDate);
     _isAddDoctorLoading = false;
     notifyListeners();
   }
 
   getDoctors() async {
-    await Firebase.initializeApp();
-
     _isGetDoctorLoading = true;
     notifyListeners();
 
-    FirebaseFirestore.instance
-        .collection('DRs')
-        .get()
-        .then((QuerySnapshot shot) {
+    firestore.collection('DRs').get().then((QuerySnapshot shot) {
       shot.docs.forEach((i) {
         final DoctorModel _newDoctor = DoctorModel.fromJson(i, i.id);
         _allDoctors.add(_newDoctor);

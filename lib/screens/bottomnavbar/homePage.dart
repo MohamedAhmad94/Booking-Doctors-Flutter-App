@@ -27,25 +27,6 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
-  // Map<int, List> categories = {
-  //   0: [
-  //     'Dentist',
-  //     'https://image.freepik.com/free-vector/children-s-dentist-patient_42515-334.jpg'
-  //   ],
-  //   1: [
-  //     'General',
-  //     'https://cdn.pixabay.com/photo/2020/12/09/16/41/stethoscope-5817919_1280.png'
-  //   ],
-  //   2: [
-  //     'Cardiologist',
-  //     'https://www.shareicon.net/data/512x512/2017/03/27/881663_medical_512x512.png'
-  //   ],
-  //   3: [
-  //     'Pediatrician',
-  //     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJQtnoIW8DcWTBL-C9vMA3CQOMUxQA1GEbtA&usqp=CAU'
-  //   ],
-  // };
-
   TextEditingController searchController = TextEditingController();
 
   @override

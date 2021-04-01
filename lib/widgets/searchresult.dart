@@ -62,7 +62,7 @@ class _SearchResultState extends State<SearchResult> {
                   Text(widget.doctorName!,
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: 20,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                           height: 1.5)),
                   Text(widget.type!,

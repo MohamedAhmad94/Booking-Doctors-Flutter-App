@@ -1,7 +1,7 @@
 import 'package:doctors_booking/screens/bottomnavbar/bottomnavbar.dart';
 import 'package:doctors_booking/screens/login.dart';
-
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignUp extends StatefulWidget {
   @override
@@ -26,6 +26,9 @@ class _SignUpState extends State<SignUp> {
   final _formKey = GlobalKey<FormState>();
 
   DateTime birthDate = DateTime(1950);
+
+  FirebaseAuth auth = FirebaseAuth.instance;
+  UserCredential? user;
 
   @override
   Widget build(BuildContext context) {
@@ -117,7 +120,7 @@ class _SignUpState extends State<SignUp> {
                     },
                   ),
                   Container(
-                    width: MediaQuery.of(context).size.width / 1.2,
+                    width: MediaQuery.of(context).size.width / 1.22,
                     child: field(
                         "Mobile Number",
                         Icons.phone,
@@ -203,10 +206,11 @@ class _SignUpState extends State<SignUp> {
                       ScaffoldMessenger.of(context).showSnackBar(
                           missingData("Accepting the Terms is required"));
                     } else {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (_) {
-                        return BottomNavBar();
-                      }));
+                      newUser();
+                      // Navigator.pushReplacement(context,
+                      //     MaterialPageRoute(builder: (_) {
+                      //   return BottomNavBar();
+                      // }));
                     }
                   },
                 );
@@ -327,5 +331,24 @@ class _SignUpState extends State<SignUp> {
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(15), topRight: Radius.circular(15.0))),
     );
+  }
+
+  newUser() async {
+    try {
+      user = await auth.createUserWithEmailAndPassword(
+          email: emailController.text, password: passwordController.text);
+
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) {
+        return BottomNavBar();
+      }));
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        ScaffoldMessenger.of(context)
+            .showSnackBar(missingData("Provided Password is too Weak"));
+      } else if (e.code == 'email-already-in-use') {
+        ScaffoldMessenger.of(context)
+            .showSnackBar(missingData("Email is already taken"));
+      }
+    }
   }
 }

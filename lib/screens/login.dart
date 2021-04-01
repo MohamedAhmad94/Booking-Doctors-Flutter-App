@@ -2,6 +2,8 @@ import 'package:doctors_booking/screens/bottomnavbar/bottomnavbar.dart';
 import 'package:doctors_booking/screens/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -19,6 +21,9 @@ class _LoginState extends State<Login> {
   GlobalKey<FormState> passwordKey = GlobalKey<FormState>();
 
   final _formKey = GlobalKey<FormState>();
+
+  FirebaseAuth auth = FirebaseAuth.instance;
+  UserCredential? user;
 
   @override
   Widget build(BuildContext context) {
@@ -131,15 +136,28 @@ class _LoginState extends State<Login> {
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold),
                   ),
-                  onPressed: () {
+                  onPressed: () async {
                     if (!_formKey.currentState!.validate()) {
                       ScaffoldMessenger.of(context)
                           .showSnackBar(missingData("All Fields are Required"));
                     } else {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (_) {
-                        return BottomNavBar();
-                      }));
+                      try {
+                        user = await auth.signInWithEmailAndPassword(
+                            email: emailController.text,
+                            password: passwordController.text);
+                        Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: (_) {
+                          return BottomNavBar();
+                        }));
+                      } on FirebaseAuthException catch (e) {
+                        if (e.code == 'user-not-found') {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              missingData("No user found for that email!"));
+                        } else if (e.code == 'auth/wrong-password') {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              missingData("Wrong password provided"));
+                        }
+                      }
                     }
                   },
                 );
@@ -163,7 +181,7 @@ class _LoginState extends State<Login> {
                           "https://www.pngitem.com/pimgs/m/118-1181708_google-icon-google-logo-design-flaws-hd-png.png"),
                     ),
                     Text(
-                      "Continue with Google",
+                      "Sign in with Google",
                       style: TextStyle(
                           color: Colors.grey,
                           fontSize: 20.0,
@@ -171,7 +189,23 @@ class _LoginState extends State<Login> {
                     ),
                   ],
                 ),
-                onPressed: () {},
+                onPressed: () async {
+                  final GoogleSignInAccount? googleUser =
+                      await GoogleSignIn().signIn();
+                  final GoogleSignInAuthentication googleAuth =
+                      await googleUser!.authentication;
+                  final AuthCredential googleCredential =
+                      GoogleAuthProvider.credential(
+                    accessToken: googleAuth.accessToken,
+                    idToken: googleAuth.idToken,
+                  );
+                  user = await FirebaseAuth.instance
+                      .signInWithCredential(googleCredential);
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (_) {
+                    return BottomNavBar();
+                  }));
+                },
               ),
               Align(
                 alignment: Alignment.bottomCenter,
