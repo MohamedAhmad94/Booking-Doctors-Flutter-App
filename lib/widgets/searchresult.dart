@@ -1,5 +1,6 @@
 import 'package:doctors_booking/screens/doctorProfile.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/animation.dart';
 import 'package:doctors_booking/widgets/favicon.dart';
 import 'package:doctors_booking/widgets/reviewitem.dart';
 
@@ -27,8 +28,25 @@ class SearchResult extends StatefulWidget {
   _SearchResultState createState() => _SearchResultState();
 }
 
-class _SearchResultState extends State<SearchResult> {
+class _SearchResultState extends State<SearchResult>
+    with SingleTickerProviderStateMixin {
   bool pressed = false;
+  late Animation<double> _animation;
+  late AnimationController _controller;
+
+  @override
+  void initState() {
+    _controller =
+        AnimationController(duration: const Duration(seconds: 1), vsync: this);
+    _animation = Tween<double>(begin: 0.0, end: 125.0).animate(_controller)
+      ..addListener(() {
+        setState(() {
+          _animation = _animation;
+        });
+      });
+    _controller.forward();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +63,7 @@ class _SearchResultState extends State<SearchResult> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
-                height: 125,
+                height: _animation.value,
                 margin: EdgeInsets.only(right: 10.0),
                 width: MediaQuery.of(context).size.width / 4,
                 decoration: BoxDecoration(
@@ -120,5 +138,11 @@ class _SearchResultState extends State<SearchResult> {
         ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 }
