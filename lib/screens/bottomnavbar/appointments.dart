@@ -20,9 +20,8 @@ class _AppointmentsState extends State<Appointments>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[50],
       appBar: AppBar(
-        backgroundColor: Color(0xff00BBDC),
+        backgroundColor: Theme.of(context).primaryColor,
         leading: IconButton(
             icon: Icon(Icons.arrow_back_ios),
             onPressed: () {
@@ -41,10 +40,7 @@ class _AppointmentsState extends State<Appointments>
                 ],
                 controller: tabController,
                 labelColor: Colors.white,
-                labelStyle: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
+                labelStyle: Theme.of(context).textTheme.headline2,
                 unselectedLabelColor: Colors.white30,
                 unselectedLabelStyle: TextStyle(
                     color: Colors.white30,

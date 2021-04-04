@@ -38,7 +38,6 @@ class _SignUpState extends State<SignUp> {
     return ScaffoldMessenger(
         key: scaffoldMessengerKey,
         child: Scaffold(
-          backgroundColor: Colors.grey[50],
           body: Container(
             margin: EdgeInsets.all(10),
             child: Form(
@@ -84,40 +83,28 @@ class _SignUpState extends State<SignUp> {
                             PopupMenuItem(
                               child: Text(
                                 "Egypt +2",
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 15.0,
-                                    fontWeight: FontWeight.bold),
+                                style: Theme.of(context).textTheme.headline5,
                               ),
                               value: "+2",
                             ),
                             PopupMenuItem(
                               child: Text(
                                 "UAE +967",
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 15.0,
-                                    fontWeight: FontWeight.bold),
+                                style: Theme.of(context).textTheme.headline5,
                               ),
                               value: "+96",
                             ),
                             PopupMenuItem(
                               child: Text(
                                 "Kuwait +965",
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 15.0,
-                                    fontWeight: FontWeight.bold),
+                                style: Theme.of(context).textTheme.headline5,
                               ),
                               value: "+965",
                             ),
                             PopupMenuItem(
                               child: Text(
                                 "KSA +966",
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 15.0,
-                                    fontWeight: FontWeight.bold),
+                                style: Theme.of(context).textTheme.headline5,
                               ),
                               value: "+966",
                             ),
@@ -175,7 +162,7 @@ class _SignUpState extends State<SignUp> {
                     children: [
                       Checkbox(
                         value: checked,
-                        activeColor: Color(0xff00BBDC),
+                        activeColor: Theme.of(context).primaryColor,
                         checkColor: Colors.blue,
                         hoverColor: Colors.white,
                         onChanged: (value) {
@@ -199,14 +186,11 @@ class _SignUpState extends State<SignUp> {
                       style: TextButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
-                        backgroundColor: Color(0xff00BBDC),
+                        backgroundColor: Theme.of(context).primaryColor,
                       ),
                       child: Text(
-                        "Create account",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold),
+                        "Create Account",
+                        style: Theme.of(context).textTheme.headline3,
                       ),
                       onPressed: () {
                         if (!_formKey.currentState!.validate()) {
@@ -217,10 +201,6 @@ class _SignUpState extends State<SignUp> {
                               missingData("Accepting the Terms is required"));
                         } else {
                           newUser();
-                          // Navigator.pushReplacement(context,
-                          //     MaterialPageRoute(builder: (_) {
-                          //   return BottomNavBar();
-                          // }));
                         }
                       },
                     );
@@ -259,7 +239,7 @@ class _SignUpState extends State<SignUp> {
                       child: Text(
                         "Have an account?",
                         style: TextStyle(
-                            color: Color(0xff00BBDC),
+                            color: Theme.of(context).primaryColor,
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,
                             height: 2.5),

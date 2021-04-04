@@ -58,15 +58,10 @@ class _ResultState extends State<Result> {
             }),
         elevation: 0.0,
         iconTheme: IconThemeData(color: Colors.black, size: 20.0),
-        title: Text("Browse",
-            style: TextStyle(
-                color: Colors.black,
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold)),
+        title: Text("Browse", style: Theme.of(context).textTheme.headline1),
         centerTitle: true,
         backgroundColor: Colors.transparent,
       ),
-      backgroundColor: Colors.grey[50],
       body: Container(
         margin: EdgeInsets.all(10.0),
         child: Column(
@@ -146,7 +141,7 @@ class _FilterItemmState extends State<FilterItemm> {
                       top: true,
                       child: Text("${widget.map[widget.index]![1]}",
                           style: TextStyle(
-                              color: Color(0xff00BBDC),
+                              color: Theme.of(context).primaryColor,
                               fontWeight: FontWeight.bold,
                               fontSize: 25,
                               height: 1)),
@@ -178,14 +173,14 @@ class _FilterItemmState extends State<FilterItemm> {
             Text(
               '${widget.map[widget.index]![1]} ',
               style: TextStyle(
-                  color: Color(0xff00BBDC),
+                  color: Theme.of(context).primaryColor,
                   fontWeight: FontWeight.bold,
                   fontSize: 16),
             ),
             SizedBox(width: 5),
             Icon(
               widget.map[widget.index]![0],
-              color: Color(0xff00BBDC),
+              color: Theme.of(context).primaryColor,
               size: 30,
             )
           ],

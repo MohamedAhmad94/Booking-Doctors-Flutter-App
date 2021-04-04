@@ -26,8 +26,7 @@ class _HomePageItemState extends State<HomePageItem> {
       alignment: Alignment.center,
       child: Text(
         widget.title!,
-        style: TextStyle(
-            color: Colors.black, fontSize: 20.0, fontWeight: FontWeight.bold),
+        style: Theme.of(context).textTheme.headline1,
       ),
     );
   }

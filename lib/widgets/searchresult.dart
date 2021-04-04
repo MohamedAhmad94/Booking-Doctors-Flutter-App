@@ -67,7 +67,7 @@ class _SearchResultState extends State<SearchResult> {
                           height: 1.5)),
                   Text(widget.type!,
                       style: TextStyle(
-                          color: Color(0xff00BBDC),
+                          color: Theme.of(context).primaryColor,
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           height: 1.5)),
@@ -90,20 +90,20 @@ class _SearchResultState extends State<SearchResult> {
                     children: [
                       Text("Add to",
                           style: TextStyle(
-                              color: Color(0xff00BBDC),
+                              color: Theme.of(context).primaryColor,
                               fontSize: 18.0,
                               fontWeight: FontWeight.bold,
                               height: 1)),
                       FavIcon(),
                       Text("Book",
                           style: TextStyle(
-                              color: Color(0xff00BBDC),
+                              color: Theme.of(context).primaryColor,
                               fontSize: 18.0,
                               fontWeight: FontWeight.bold,
                               height: 1)),
                       IconButton(
                           icon: Icon(Icons.calendar_today),
-                          color: Color(0xff00BBDC),
+                          color: Theme.of(context).primaryColor,
                           iconSize: 25.0,
                           onPressed: () {
                             Navigator.push(context,

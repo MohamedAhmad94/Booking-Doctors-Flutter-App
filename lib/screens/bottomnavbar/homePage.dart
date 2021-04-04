@@ -32,7 +32,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[50],
       body: Container(
         child:
             ScopedModelDescendant(builder: (context, child, MainModel model) {
@@ -55,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                       color: Colors.white,
                     ),
                     title: Text("Search by Location",
-                        style: TextStyle(color: Colors.white, fontSize: 20.0)),
+                        style: Theme.of(context).textTheme.headline2),
                     onTap: () {
                       Navigator.push(
                           context,
@@ -86,7 +85,7 @@ class _HomePageState extends State<HomePage> {
                 child: Text(
                   " Schedule your\n Next Appoinmtment\n Today",
                   style: TextStyle(
-                      color: Color(0xff03CBC8),
+                      color: Theme.of(context).accentColor,
                       fontSize: 17.0,
                       fontWeight: FontWeight.bold),
                 ),
@@ -111,11 +110,10 @@ class _HomePageState extends State<HomePage> {
 
   headLine(String title) {
     return ListTile(
-      title: Text(title,
-          style: TextStyle(
-              color: Colors.black,
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold)),
+      title: Text(
+        title,
+        style: Theme.of(context).textTheme.headline1,
+      ),
       trailing: Icon(Icons.navigate_next, color: Colors.grey, size: 25),
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (_) {
@@ -151,70 +149,63 @@ class _HomePageState extends State<HomePage> {
         borderRadius: BorderRadius.circular(10),
       ),
       child: ListTile(
-        leading: CircleAvatar(
-          minRadius: 40.0,
-          maxRadius: 40.0,
-          backgroundImage: NetworkImage(doctorImage),
-        ),
-        title: Text(
-          doctorName,
-          style: TextStyle(
-              color: Colors.black54, fontSize: 20, fontWeight: FontWeight.bold),
-        ),
-        subtitle: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              doctorCategory,
-              style: TextStyle(
-                  color: Color(0xff03CBC8),
-                  fontSize: 15.0,
-                  fontWeight: FontWeight.bold),
-            ),
-            Row(
-              children: [
-                RatingBar(
-                    minRating: 1.0,
-                    maxRating: 5.0,
-                    initialRating: doctorRating,
-                    direction: Axis.horizontal,
-                    itemCount: 5,
-                    itemSize: 15,
-                    allowHalfRating: true,
-                    glowColor: Colors.yellow,
-                    unratedColor: Colors.grey,
-                    ratingWidget: RatingWidget(
-                        full: Icon(Icons.star, color: Colors.amber),
-                        half: Icon(Icons.star_half, color: Colors.amber),
-                        empty: Icon(Icons.star_border, color: Colors.amber)),
-                    onRatingUpdate: (doctorRating2) {
-                      setState(() {
-                        doctorRating = doctorRating2;
-                      });
-                    }),
-                Text(
-                  "${doctorRating.toString()}",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 15.0,
-                      fontWeight: FontWeight.bold),
-                )
-              ],
-            ),
-          ],
-        ),
-        trailing: Icon(Icons.navigate_next, color: Colors.grey, size: 25),
-        onTap: () {
-          model.getDoctorID(id);
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (_) {
-              return DoctorProfile();
-            }),
-          );
-        },
-      ),
+          leading: CircleAvatar(
+            minRadius: 40.0,
+            maxRadius: 40.0,
+            backgroundImage: NetworkImage(doctorImage),
+          ),
+          title: Text(
+            doctorName,
+            style: Theme.of(context).textTheme.headline1,
+          ),
+          subtitle: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                doctorCategory,
+                style: TextStyle(
+                    color: Theme.of(context).primaryColor,
+                    fontSize: 15.0,
+                    fontWeight: FontWeight.bold),
+              ),
+              Row(
+                children: [
+                  RatingBar(
+                      minRating: 1.0,
+                      maxRating: 5.0,
+                      initialRating: doctorRating,
+                      direction: Axis.horizontal,
+                      itemCount: 5,
+                      itemSize: 15,
+                      allowHalfRating: true,
+                      glowColor: Colors.yellow,
+                      unratedColor: Colors.grey,
+                      ratingWidget: RatingWidget(
+                          full: Icon(Icons.star, color: Colors.amber),
+                          half: Icon(Icons.star_half, color: Colors.amber),
+                          empty: Icon(Icons.star_border, color: Colors.amber)),
+                      onRatingUpdate: (doctorRating2) {
+                        setState(() {
+                          doctorRating = doctorRating2;
+                        });
+                      }),
+                  Text(
+                    "${doctorRating.toString()}",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            ],
+          ),
+          trailing: Icon(Icons.navigate_next, color: Colors.grey, size: 25),
+          onTap: () {
+            model.getDoctorID(id);
+            Navigator.of(context).push(createRoute());
+          }),
     );
   }
 
@@ -253,5 +244,22 @@ class _HomePageState extends State<HomePage> {
         ],
       );
     }
+  }
+
+  Route createRoute() {
+    return PageRouteBuilder(
+        pageBuilder: (context, animation, secondaryAnimation) =>
+            DoctorProfile(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          var begin = Offset(0.0, 1.0);
+          var end = Offset.zero;
+          var curve = Curves.ease;
+          var tween =
+              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+          return SlideTransition(
+            position: animation.drive(tween),
+            child: child,
+          );
+        });
   }
 }

@@ -22,7 +22,6 @@ class _SearchMapState extends State<SearchMap> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[50],
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.black, size: 20.0),
         elevation: 0.0,

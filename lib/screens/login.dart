@@ -33,7 +33,6 @@ class _LoginState extends State<Login> {
     return ScaffoldMessenger(
         key: scaffoldMessengerKey,
         child: Scaffold(
-          backgroundColor: Colors.grey[50],
           body: Container(
             margin: EdgeInsets.all(10),
             child: Form(
@@ -138,10 +137,7 @@ class _LoginState extends State<Login> {
                       ),
                       child: Text(
                         "Log in",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold),
+                        style: Theme.of(context).textTheme.headline2,
                       ),
                       onPressed: () async {
                         if (!_formKey.currentState!.validate()) {
@@ -228,7 +224,7 @@ class _LoginState extends State<Login> {
                       child: Text(
                         "Not an existing user? Sign Up",
                         style: TextStyle(
-                            color: Color(0xff00BBDC),
+                            color: Theme.of(context).primaryColor,
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,
                             height: 2.5),

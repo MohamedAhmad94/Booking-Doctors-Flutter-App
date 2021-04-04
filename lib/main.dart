@@ -18,6 +18,33 @@ class MyApp extends StatelessWidget {
       model: MainModel(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+            brightness: Brightness.light,
+            primaryColor: Color(0xff00BBDC),
+            accentColor: Color(0xff03CBC8),
+            scaffoldBackgroundColor: Colors.grey[50],
+            textTheme: TextTheme(
+              headline1: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+              headline2: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+              headline3: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+              headline4: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.normal),
+              headline5: TextStyle(
+                  color: Colors.black,
+                  fontSize: 15.0,
+                  fontWeight: FontWeight.bold),
+            )),
         home: Login(),
       ),
     );

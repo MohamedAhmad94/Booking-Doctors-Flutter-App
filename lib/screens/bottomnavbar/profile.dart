@@ -1,4 +1,4 @@
-import 'package:doctors_booking/screens/add.dart';
+// import 'package:doctors_booking/screens/add.dart';
 import 'package:doctors_booking/screens/login.dart';
 import 'package:doctors_booking/widgets/customappbar.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +18,6 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[50],
       body: Container(
         child: ListView(
           scrollDirection: Axis.vertical,
@@ -43,17 +42,11 @@ class _ProfileState extends State<Profile> {
                           ),
                     title: Text(
                       "Faizal Ahmed",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
+                      style: Theme.of(context).textTheme.headline2,
                     ),
                     subtitle: Text(
                       "View Profile",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.normal),
+                      style: Theme.of(context).textTheme.headline4,
                     ),
                     onTap: () {
                       showDialog(
@@ -111,11 +104,7 @@ class _ProfileState extends State<Profile> {
               ),
               'Profile',
             ),
-            menuItem("Add", Icons.add, () {
-              Navigator.push(context, MaterialPageRoute(builder: (_) {
-                return Add();
-              }));
-            }),
+            menuItem("Add", Icons.add, () {}),
             menuItem("Favorites", Icons.favorite_border_sharp, () {}),
             menuItem("Payment Detailes", Icons.payment_sharp, () {}),
             menuItem("Logout", Icons.logout, () {

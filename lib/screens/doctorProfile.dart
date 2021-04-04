@@ -16,7 +16,6 @@ class _DoctorProfileState extends State<DoctorProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[50],
       body: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
@@ -277,8 +276,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
       padding: const EdgeInsets.all(8.0),
       child: Text(
         title,
-        style: TextStyle(
-            color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+        style: Theme.of(context).textTheme.headline1,
       ),
     );
   }
@@ -307,10 +305,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                     Navigator.pop(context);
                   }),
               title: Text("Doctor Profile",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold)),
+                  style: Theme.of(context).textTheme.headline1),
             ),
           ),
           Positioned(
@@ -370,7 +365,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                               IconButton(
                                   icon: Icon(Icons.calendar_today),
                                   iconSize: 40,
-                                  color: Color(0xff00BBDC),
+                                  color: Theme.of(context).primaryColor,
                                   onPressed: null),
                               Column(
                                 mainAxisAlignment: MainAxisAlignment.start,

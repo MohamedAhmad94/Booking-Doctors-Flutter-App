@@ -58,7 +58,7 @@ class _DoctorsState extends State<Doctors> {
               Text(
                 widget.type!,
                 style: TextStyle(
-                    color: Color(0xff00BBDC),
+                    color: Theme.of(context).primaryColor,
                     fontSize: 16.0,
                     fontWeight: FontWeight.bold,
                     height: 1.5),

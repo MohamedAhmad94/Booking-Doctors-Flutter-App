@@ -30,7 +30,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             label: 'Profile',
           ),
         ],
-        selectedItemColor: Color(0xff00BBDC),
+        selectedItemColor: Theme.of(context).primaryColor,
         unselectedItemColor: Colors.grey,
         currentIndex: current,
         onTap: (index) {

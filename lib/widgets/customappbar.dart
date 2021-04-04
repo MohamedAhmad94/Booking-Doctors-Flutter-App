@@ -25,8 +25,8 @@ class _CustomAppBarState extends State<CustomAppBar> {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            Color(0xff00BBDC),
-            Color(0xff03CBC8),
+            Theme.of(context).primaryColor,
+            Theme.of(context).accentColor,
           ],
         ),
       ),

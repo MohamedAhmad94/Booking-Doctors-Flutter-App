@@ -48,7 +48,7 @@ class _ReviewItemState extends State<ReviewItem> {
         Text(
           '  ( ${widget.reviews.toString()} Reviews)',
           style: TextStyle(
-              color: Color(0xff00BBDC),
+              color: Theme.of(context).primaryColor,
               fontSize: 18.0,
               fontWeight: FontWeight.bold,
               height: 1.5),
