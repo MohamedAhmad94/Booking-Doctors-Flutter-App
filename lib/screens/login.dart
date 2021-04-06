@@ -1,7 +1,6 @@
 import 'package:doctors_booking/screens/bottomnavbar/bottomnavbar.dart';
 import 'package:doctors_booking/screens/signup.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -306,15 +305,5 @@ class _LoginState extends State<Login> {
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(15), topRight: Radius.circular(15.0))),
     );
-  }
-
-  Future<bool> saveData() async {
-    try {
-      SharedPreferences _user = await SharedPreferences.getInstance();
-      _user.setString("email", emailController.text);
-      return true;
-    } catch (e) {
-      return false;
-    }
   }
 }

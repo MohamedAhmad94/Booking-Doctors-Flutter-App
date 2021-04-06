@@ -3,6 +3,8 @@ import 'package:doctors_booking/screens/login.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:doctors_booking/screens/bottomnavbar/bottomnavbar.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,6 +14,8 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
+  final user = FirebaseAuth.instance.currentUser;
+
   @override
   Widget build(BuildContext context) {
     return ScopedModel(
@@ -45,7 +49,7 @@ class MyApp extends StatelessWidget {
                   fontSize: 15.0,
                   fontWeight: FontWeight.bold),
             )),
-        home: Login(),
+        home: user != null ? BottomNavBar() : Login(),
       ),
     );
   }
