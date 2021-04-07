@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'dart:io';
 
 class Profile extends StatefulWidget {
   @override
@@ -12,8 +13,9 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  PickedFile? image;
+  PickedFile? _image;
   final picker = ImagePicker();
+  File? _file;
 
   @override
   Widget build(BuildContext context) {
@@ -28,17 +30,15 @@ class _ProfileState extends State<Profile> {
               Container(
                 margin: EdgeInsets.all(10.0),
                 child: ListTile(
-                    leading: image == null
+                    leading: _image == null
                         ? CircleAvatar(
-                            minRadius: 40.0,
-                            maxRadius: 40.0,
+                            radius: 40.0,
                             backgroundImage: NetworkImage(
                                 'https://freesvg.org/img/cliente.png'),
                           )
                         : CircleAvatar(
-                            minRadius: 40.0,
-                            maxRadius: 40.0,
-                            backgroundImage: AssetImage(image!.path),
+                            radius: 40.0,
+                            backgroundImage: FileImage(_file!),
                           ),
                     title: Text(
                       "Faizal Ahmed",
@@ -141,8 +141,10 @@ class _ProfileState extends State<Profile> {
 
   getImage(ImageSource source) async {
     var _pickedFile = await picker.getImage(source: source);
+
     setState(() {
-      image = _pickedFile;
+      _image = _pickedFile;
+      _file = File(_pickedFile!.path);
     });
   }
 }
