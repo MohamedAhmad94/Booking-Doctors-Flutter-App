@@ -20,16 +20,6 @@ mixin CategoryController on Model {
     _isCategoryLoading = true;
     notifyListeners();
 
-    // realtime database decoding
-    // http.Response _response = await http.get(Uri.https(
-    //     'doctors-booking-307313-default-rtdb.firebaseio.com', '/Categories'));
-    // var _newData = json.decode(_response.body);
-
-    // _newData.forEach((x, i) {
-    //   final CategoryModel _anotherCategory = CategoryModel.fromJson(i, i.id);
-    //   _allCategories.add(_anotherCategory);
-    // });
-
     // Firestore database decoding
     firestore.collection('Categories').get().then((QuerySnapshot shot) {
       shot.docs.forEach((i) {
@@ -50,12 +40,6 @@ mixin CategoryController on Model {
       'categoryName': categoryName,
       'categoryImage': categoryImage,
     };
-
-    // realtime database encoding
-    // http.Response _response = await http.post(
-    //     Uri.https('doctors-booking-307313-default-rtdb.firebaseio.com',
-    //         '/Categories'),
-    //     body: json.encode(_data));
 
     // firestore database encoding
 
