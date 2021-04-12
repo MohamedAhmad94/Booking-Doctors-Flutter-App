@@ -92,12 +92,13 @@ class _HomePageState extends State<HomePage> {
               ),
               headLine("Categories"),
               Container(
-                  height: MediaQuery.of(context).size.height / 3,
-                  child: model.isCategoryLoading == true
-                      ? Center(child: Loading())
-                      : model.allCategories.isNotEmpty
-                          ? scrollSection(model)
-                          : Center(child: Text('no data found'))),
+                height: MediaQuery.of(context).size.height / 3,
+                child: model.isCategoryLoading == true
+                    ? Center(child: Loading())
+                    : model.allCategories.isEmpty
+                        ? Center(child: Text('no data found'))
+                        : scrollSection(model),
+              ),
               headLine("Suggested Doctors"),
               allDoctors(model),
             ],
@@ -232,7 +233,9 @@ class _HomePageState extends State<HomePage> {
   allDoctors(MainModel model) {
     if (model.isGetDoctorloading == true) {
       return Center(child: Loading());
-    } else if (model.allDoctors.isNotEmpty) {
+    } else if (model.allDoctors.isEmpty) {
+      return Center(child: Text('No Suggested Doctors Available'));
+    } else {
       return Column(
         children: [
           for (var i in model.allDoctors)
@@ -240,8 +243,6 @@ class _HomePageState extends State<HomePage> {
                 i.doctorName!, i.image!, i.category!, i.rating!, i.id!, model),
         ],
       );
-    } else {
-      return Center(child: Text('No Suggested Doctors Available'));
     }
   }
 
